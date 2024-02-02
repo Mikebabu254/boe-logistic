@@ -11,8 +11,14 @@
     <link rel="stylesheet" href="styles/user.css">
 </head>
 <body>
+    <nav>
+        <input type="search"" class="search">
+        <input type="submit" value="search" class="searchBtn">
+    </nav>
 
-        <table>
+
+    <div class="tb">
+    <table>
             <tr>
                 <th>FIRST NAME</th>
                 <th>LAST NAME</th>
@@ -37,6 +43,9 @@
                 }
             ?>
         </table>
+    </div>
+
+        
 </body>
 </html>
 
