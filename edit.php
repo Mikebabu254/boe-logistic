@@ -178,7 +178,7 @@
 </head>
 <body>
     <h2>Edit User</h2>
-    <form method="post">
+    <form method="post" class="edit_details">
         <label for="edited_first_name">First Name:</label>
         <input type="text" id="edited_first_name" name="edited_first_name" value="<?php echo $user['first_name']; ?>" required>
 

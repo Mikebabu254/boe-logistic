@@ -1,0 +1,18 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --blue: #0d4683;
+    --gold: #c7943f;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/icons.jpg');
+    background-size: contain;
+    padding: 0;
+    height: 100vh;
+}
