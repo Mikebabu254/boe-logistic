@@ -14,5 +14,66 @@ body {
     background-image: url('../images/icons.jpg');
     background-size: contain;
     padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
+}
+.edit_details{
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    backdrop-filter: blur(20px);
+}
+.titlee{
+    font-size: 30px;
+    font-weight: bold;
+}
+.names{
+    display: flex;
+    gap: 10px;
+}
+.numbers{
+    display: flex;
+    gap: 10px;
+}
+.location{
+    display: flex;
+    gap: 10px;
+}
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+}
+.btns{
+    display: flex;
+    gap: 100px;
+    
+}
+.submitBtn {
+    background-color: var(--gold);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 50px;
+    transition: 0.5s;
+    
+}
+.submitBtn:hover {
+    background-color:var(--blue);
 }

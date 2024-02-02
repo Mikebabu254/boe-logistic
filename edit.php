@@ -177,31 +177,38 @@
     <link rel="stylesheet" href="styles/edit.css">
 </head>
 <body>
-    <h2>Edit User</h2>
+
+    
     <form method="post" class="edit_details">
-        <label for="edited_first_name">First Name:</label>
-        <input type="text" id="edited_first_name" name="edited_first_name" value="<?php echo $user['first_name']; ?>" required>
+        <div class="titlee">Edit User</div>
+        <div class="names">
+        <input type="text" id="edited_first_name" name="edited_first_name"  value="<?php echo $user['first_name']; ?>"placeholder="First Name" class="input" required>
 
-        <label for="edited_second_name">Last Name:</label>
-        <input type="text" id="edited_second_name" name="edited_second_name" value="<?php echo $user['second_name']; ?>" required>
+        <input type="text" id="edited_second_name" name="edited_second_name" value="<?php echo $user['second_name']; ?>" placeholder="Second Name" class="input" required>
 
-        <label for="edited_email">Email:</label>
-        <input type="email" id="edited_email" name="edited_email" value="<?php echo $user['email']; ?>" required>
+        </div>
+       
+        <input type="email" id="edited_email" name="edited_email" value="<?php echo $user['email']; ?>" placeholder="email" class="input"required>
 
-        <label for="edited_phone_no">Phone Number:</label>
-        <input type="tel" id="edited_phone_no" name="edited_phone_no" value="<?php echo $user['phone_no']; ?>" required>
+        <div class="numbers">
 
-        <label for="edited_national_id">ID Number:</label>
-        <input type="text" id="edited_national_id" name="edited_national_id" value="<?php echo $user['national_id']; ?>" required>
+        <input type="tel" id="edited_phone_no" name="edited_phone_no" value="<?php echo $user['phone_no']; ?>" placeholder="Phone Number" class="input" required>
 
-        <label for="edited_county">County:</label>
-        <input type="text" id="edited_county" name="edited_county" value="<?php echo $user['county']; ?>" required>
+        <input type="text" id="edited_national_id" name="edited_national_id" value="<?php echo $user['national_id']; ?>"  placeholder="ID number" class="input" required>
 
-        <label for="edited_sub_county">Constituency:</label>
-        <input type="text" id="edited_sub_county" name="edited_sub_county" value="<?php echo $user['sub_county']; ?>" required>
+        </div>
+        <div class="location">
+        <input type="text" id="edited_county" name="edited_county" value="<?php echo $user['county']; ?>" placeholder="County" class="input"required>
 
-        <input type="submit" name="submit" value="Update">
-        <button type="submit" name="delete" onclick="return confirm('Are you sure you want to delete this user?')">Delete User</button>
+        <input type="text" id="edited_sub_county" name="edited_sub_county" value="<?php echo $user['sub_county']; ?>" placeholder="Sub-County" class="input" required>
+
+        </div>
+        
+        <div class="btns">
+            <input type="submit" name="submit" value="Update"  class="submitBtn" >
+        <button type="submit" name="delete" onclick="return confirm('Are you sure you want to delete this user?')"  class="submitBtn">Delete User</button>
+        </div>
+        
     </form>
 </body>
 </html>
