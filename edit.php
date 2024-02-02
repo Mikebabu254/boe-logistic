@@ -1,5 +1,5 @@
 <?php
-/*
+
     session_start();
     // Check if the user is not logged in, redirect to login page
     if (!isset($_SESSION["email"])) {
@@ -91,10 +91,10 @@
             header("Location: user.php?delete=success");
             exit();
         }
-    }*/
+    }
 
  
-    session_start();
+   /* session_start();*/
     // Check if the user is not logged in, redirect to login page
     if (!isset($_SESSION["email"])) {
         header("Location: index.php");
@@ -157,12 +157,12 @@
             }
         } else {
             // Redirect to a page indicating that the user does not exist
-            header("Location: user_not_found.php");
+            header("Location: user.php");
             exit();
         }
     } else {
         // Redirect to a page indicating that the user ID is not provided
-        header("Location: user_not_provided.php");
+        header("Location: user.php");
         exit();
     }
 
