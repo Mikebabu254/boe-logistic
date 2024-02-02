@@ -66,4 +66,20 @@ table,tr,th{
     padding: 5px;
 
 }
+.edit-button {
+    background-color: #3498db; 
+    border: none; 
+    color: #fff; 
+    padding: 8px 16px; 
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    font-size: 14px; 
+    cursor: pointer; 
+    border-radius: 4px; 
+    transition: background-color 0.3s;
+}
 
+.edit-button:hover {
+    background-color:var(--blue);
+}

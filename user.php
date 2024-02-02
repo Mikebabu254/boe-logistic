@@ -44,7 +44,7 @@
                         echo "<td>{$row['national_id']}</td>";
                         echo "<td>{$row['county']}</td>";
                         echo "<td>{$row['sub_county']}</td>";
-                        echo "<td><button><a href='edit.php?id={$row['id']}'>Edit</a></button></td>";
+                        echo "<td><button class='edit-button'><a href='edit.php?id={$row['id']}' style='color: #fff; text-decoration: none;'>Edit</a></button></td>";
                     
                     echo "</tr>";
                 }
