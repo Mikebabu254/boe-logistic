@@ -12,8 +12,11 @@
 </head>
 <body>
     <nav>
-        <input type="search"" class="search">
-        <input type="submit" value="search" class="searchBtn">
+        <form method="get">
+            <input type="search" name="search" class="search" placeholder="Search...">
+            <input type="submit" value="search" class="searchBtn">
+        </form>
+        
     </nav>
 
 

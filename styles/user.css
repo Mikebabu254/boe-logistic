@@ -41,8 +41,8 @@ nav{
 }
 
 .searchBtn:hover{
-    width: 120px;
-    height: 40px;
+    transform: scale(1.1);
+    z-index: 2;
 }
 
 .tb{

@@ -24,4 +24,29 @@
     if (!$result) {
         die("Query failed: " . mysqli_error($conn));
     }
+
+
+
+
+    // Check if the form is submitted
+    if(isset($_GET['search'])){
+        $search = mysqli_real_escape_string($conn, $_GET['search']);
+        $sql = "SELECT id, first_name, second_name, email, phone_no, national_id, county, sub_county 
+                FROM agents 
+                WHERE first_name LIKE '%$search%' OR second_name LIKE '%$search%' OR email LIKE '%$search%'
+                OR phone_no LIKE '%$search%' OR national_id LIKE '%$search%' OR county LIKE '%$search%' 
+                OR sub_county LIKE '%$search%'";
+        $result = mysqli_query($conn, $sql);
+
+        if (!$result) {
+            die("Query failed: " . mysqli_error($conn));
+        }
+    }else {
+        // If no search query, fetch all users
+        $sql = "SELECT id, first_name, second_name, email, phone_no, national_id, county, sub_county FROM agents";
+        $result = mysqli_query($conn, $sql);
+
+    }if (!$result) {
+        die("Query failed: " . mysqli_error($conn));
+    }
 ?>
