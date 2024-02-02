@@ -1,0 +1,35 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --blue: #0d4683;
+    --gold: #c7943f;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/icons.jpg');
+    background-size: contain;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+}
+
+table{
+    width: 90%;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    
+}
+
+table,tr,th{
+    padding: 5px;
+
+}
+

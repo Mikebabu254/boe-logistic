@@ -1,0 +1,63 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
+:root{
+    --blue: #0d4683;
+    --gold: #c7943f;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-size: contain;
+    padding: 0;
+    display: flex;
+    height: auto;
+}
+
+.menu{
+    width: 300px;
+    height: 99%;
+    position: absolute;
+    margin-left: 0px;
+    background-color: var(--blue);
+    z-index: 100;
+}
+
+.btn{
+    width: 100%;
+    height: 50px;
+    border: none;
+    margin-top: 5px;
+    background-color: var(--gold);
+}
+
+.listFrame{
+    margin-left: 0px;
+    width: 100%;
+    height: 99%;
+    visibility: hidden;
+    position: absolute;
+    
+}
+
+.regFrame{
+    margin-left: 0px;
+    width: 100%;
+    height: 99%;
+    visibility: hidden;
+    position: absolute;
+}
+
+.frm{
+    margin-left: 300px;
+    width: 77%;
+    height: 100%;
+    display: flex;
+    background-image: url('../images/icons.jpg');
+    background-size: contain;
+    position: absolute;
+}
