@@ -1,5 +1,6 @@
 <?php
-    include 'database/db-user.php'
+    include 'database/db-user.php';
+    //include 'database/db_delete.php';
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +31,7 @@
                 <th>ID NO</th>
                 <th>COUNTY</th>
                 <th>CONSTITUENCY</th>
+                <th>EDIT</th>
             </tr>
             <?php
                 // Display user information in a table
@@ -42,13 +44,17 @@
                         echo "<td>{$row['national_id']}</td>";
                         echo "<td>{$row['county']}</td>";
                         echo "<td>{$row['sub_county']}</td>";
+                        echo "<td><button><a href='edit.php?id={$row['id']}'>Edit</a></button></td>";
+                    
                     echo "</tr>";
                 }
             ?>
+
+            
         </table>
     </div>
 
-        
+    
 </body>
 </html>
 
