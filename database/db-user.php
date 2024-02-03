@@ -13,7 +13,7 @@
     }
 
     // Retrieve user information from the database
-    $sql = "SELECT id, first_name, second_name, email, phone_no, national_id, county, sub_county FROM agents";
+    $sql = "SELECT * FROM agents";
     $result = mysqli_query($conn, $sql);
 
     if (!$result) {

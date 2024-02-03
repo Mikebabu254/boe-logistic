@@ -33,37 +33,37 @@
             $hashedPassword = $user['password'];
 
             // Check if the form is submitted
-    if(isset($_POST['submit'])){
-        // Retrieve edited user details from the form
-        $editedFirstName = mysqli_real_escape_string($conn, $_POST['edited_first_name']);
-        $editedSecondName = mysqli_real_escape_string($conn, $_POST['edited_second_name']);
-        $editedEmail = mysqli_real_escape_string($conn, $_POST['edited_email']);
-        $editedPhoneNo = mysqli_real_escape_string($conn, $_POST['edited_phone_no']);
-        $editedNationalId = mysqli_real_escape_string($conn, $_POST['edited_national_id']);
-        $editedCounty = mysqli_real_escape_string($conn, $_POST['edited_county']);
-        $editedSubCounty = mysqli_real_escape_string($conn, $_POST['edited_sub_county']);
+            if(isset($_POST['submit'])){
+                // Retrieve edited user details from the form
+                $editedFirstName = mysqli_real_escape_string($conn, $_POST['edited_first_name']);
+                $editedSecondName = mysqli_real_escape_string($conn, $_POST['edited_second_name']);
+                $editedEmail = mysqli_real_escape_string($conn, $_POST['edited_email']);
+                $editedPhoneNo = mysqli_real_escape_string($conn, $_POST['edited_phone_no']);
+                $editedNationalId = mysqli_real_escape_string($conn, $_POST['edited_national_id']);
+                $editedCounty = mysqli_real_escape_string($conn, $_POST['edited_county']);
+                $editedSubCounty = mysqli_real_escape_string($conn, $_POST['edited_sub_county']);
 
-        // Update the user details in the database
-        $updateSql = "UPDATE agents SET
-                      first_name = '$editedFirstName',
-                      second_name = '$editedSecondName',
-                      email = '$editedEmail',
-                      phone_no = '$editedPhoneNo',
-                      national_id = '$editedNationalId',
-                      county = '$editedCounty',
-                      sub_county = '$editedSubCounty'
-                      WHERE id = $userId";
+            // Update the user details in the database
+            $updateSql = "UPDATE agents SET
+                          first_name = '$editedFirstName',
+                          second_name = '$editedSecondName',
+                          email = '$editedEmail',
+                         phone_no = '$editedPhoneNo',
+                         national_id = '$editedNationalId',
+                         county = '$editedCounty',
+                         sub_county = '$editedSubCounty'
+                         WHERE id = $userId";
 
-        $updateResult = mysqli_query($conn, $updateSql);
+            $updateResult = mysqli_query($conn, $updateSql);
 
-        if (!$updateResult) {
-            die("Update failed: " . mysqli_error($conn));
-        } else {
+            if (!$updateResult) {
+                die("Update failed: " . mysqli_error($conn));
+            } else {
             // Redirect to a page indicating successful update
             header("Location: user.php");
             exit();
+            }
         }
-    }
     
             // Check if the delete button is clicked
             if (isset($_POST['delete'])) {

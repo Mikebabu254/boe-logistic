@@ -7,22 +7,24 @@
         exit();
     }
 
-
-    include 'db_connection.php';
+    include 'database/db_connection.php';
 
     if($conn->connect_error){
         die("connection failed:" .$conn-> connect_error);
     }
 
-    $user_id = $_SESSION['user_id'];
+    // Get the logged-in user's email
+    $userEmail = $_SESSION["email"];
 
-    $sql = "SELECT * FROM agents where id = $user_id";
+    // Query the database to get user details
+    $sql = "SELECT * FROM agents WHERE email = '$userEmail'";
     $result = $conn->query($sql);
-
-    if($result->num_rows>0){
-        $userDeatils = $result->fetch_assoc();
-    }else{
-        echo "results not found";
+   
+    if ($result->num_rows > 0) {
+        $userDetails = $result->fetch_assoc();
+    } else {
+        echo "User details not found";
+        // You can handle the error or redirect the user to an error page
         exit();
     }
 
