@@ -31,7 +31,7 @@ if (!isset($_SESSION["email"])) {
     <div class="frm">
         <iframe src="user.php" id="userList" class="listFrame"></iframe>
         <iframe src="registration.php" id="regFrame" class="regFrame"></iframe>
-        <iframe src="dashboard.php" id="dashboard" class="dashboard"></iframe>
+        <iframe src="dashboard.php" id="dashFrame" class="dashboard"></iframe>
     </div>
 
     <div class="details">

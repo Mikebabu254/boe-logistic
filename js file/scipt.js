@@ -3,6 +3,7 @@ var regFrame = document.getElementById('regFrame');
 var userList = document.getElementById('userList');
 var viewList = document.getElementById('viewList');
 var dashboard = document.getElementById('dashboard');
+var dashFrame = document.getElementById('dashFrame');
 var visibleColor = "#0d4683";
 var hiddenColor = "#c7943f";
 
@@ -10,6 +11,7 @@ var hiddenColor = "#c7943f";
 addUser.onclick = function(){
     regFrame.style.visibility="visible";
     userList.style.visibility="hidden";
+    dashFrame.style.visibility="hidden";
     addUser.style.backgroundColor=visibleColor;
     viewList.style.backgroundColor=hiddenColor;
     dashboard.style.backgroundColor=hiddenColor;
@@ -19,12 +21,14 @@ addUser.onclick = function(){
 viewList.onclick = function(){
     userList.style.visibility="visible";
     regFrame.style.visibility="hidden";
+    dashFrame.style.visibility="hidden";
     viewList.style.backgroundColor=visibleColor;
     addUser.style.backgroundColor=hiddenColor;
     dashboard.style.backgroundColor=hiddenColor;
 }
 
 dashboard.onclick = function(){
+    dashFrame.style.visibility="visible";
     userList.style.visibility="hidden";
     regFrame.style.visibility="hidden";
     viewList.style.backgroundColor=hiddenColor;

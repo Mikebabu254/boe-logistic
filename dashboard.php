@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 <body>
-    
+    <nav>
+        <div class="title">WELCOME AGENT </div>
+    </nav>
 </body>
 </html>
