@@ -1,3 +1,8 @@
+
+//.............for admin dashboard.........
+
+
+
 var addUser = document.getElementById('addUsers');
 var regFrame = document.getElementById('regFrame');
 var userList = document.getElementById('userList');
@@ -35,7 +40,7 @@ dashboard.onclick = function(){
     addUser.style.backgroundColor=hiddenColor;
     dashboard.style.backgroundColor=visibleColor;
 }
-function showAgentDetails(tab) {
+/*function showAgentDetails(tab) {
     // Reset styles for all buttons
     const buttons = document.querySelectorAll('#agentMenu button');
     buttons.forEach(button => button.classList.remove('active'));
@@ -60,4 +65,6 @@ function showAgentDetails(tab) {
         agentDetailsSection.innerHTML = '<h2>No details available</h2>';
     }
   }
-  
+  */
+
+//.......for agents dhasboard..........

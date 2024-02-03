@@ -1,23 +1,23 @@
 *{
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
 }
 
 :root{
-    --blue: #0d4683;
-    --gold: #c7943f;
+  --blue: #0d4683;
+  --gold: #c7943f;
 
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f4f4f4;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-size: contain;
+  padding: 0;
+  display: flex;
+  height: auto;
+}
+  /*
   header {
     background-color: #333;
     color: #fff;
@@ -69,5 +69,42 @@ body {
   #agentDetails h2 {
     color: #333;
     margin-bottom: 10px;
-  }
+  }*/
+
+.menu{
+  width: 300px;
+  height: 99%;
+  position: absolute;
+  margin-left: 0px;
+  background-color: var(--blue);
+  z-index: 100;
+}
+
+  
+.btn{
+  width: 100%;
+  height: 50px;
+  border: none;
+  margin-top: 5px;
+  background-color: var(--gold);
+}
+
+.frm{
+  margin-left: 300px;
+  width: 77%;
+  height: 100%;
+  display: flex;
+  background-image: url('../images/icons.jpg');
+  background-size: contain;
+  position: absolute;
+}
+
+.dashboard{
+  margin-left: 0px;
+  width: 100%;
+  height: 99%;
+  visibility: visible;
+  position: absolute;
+}
+
   
