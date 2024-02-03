@@ -16,7 +16,7 @@ if (!isset($_SESSION["email"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>admin dashboard</title>
-    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/admin.css">
 </head>
 <body>
     <div class="menu">
@@ -31,6 +31,11 @@ if (!isset($_SESSION["email"])) {
     <div class="frm">
         <iframe src="user.php" id="userList" class="listFrame"></iframe>
         <iframe src="registration.php" id="regFrame" class="regFrame"></iframe>
+        <iframe src="dashboard.php" id="dashboard" class="dashboard"></iframe>
+    </div>
+
+    <div class="details">
+        dfvdf v
     </div>
     
 
