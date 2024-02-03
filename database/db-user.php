@@ -6,12 +6,7 @@
         exit();
     }
 
-    $db_server = "localhost";
-    $db_user = "root";
-    $db_password = "";
-    $db_name = "boe-logistics";
-
-    $conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
+    include 'database/db_connection.php';
 
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());

@@ -6,16 +6,7 @@
         exit();
     }
 
-    $db_server = "localhost";
-    $db_user = "root";
-    $db_password = "";
-    $db_name = "boe-logistics";
-
-    $conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
-
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
+    include 'db_connection.php';
 
     // Check if the user ID is provided in the URL
     if (isset($_GET['id'])) {

@@ -9,11 +9,7 @@ if (isset($_SESSION["email"])) {
     exit();
 }
 
-$db_server = "localhost";
-$db_user = "root";
-$db_password = "";
-$db_name = "boe-logistics";
-$conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
+include 'database/db_connection.php';
 
 // Function to sanitize user input
 function sanitize_input($data)
