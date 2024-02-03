@@ -1,3 +1,7 @@
+<?php
+    include 'database/db_dashboard.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +12,19 @@
 </head>
 <body>
     <nav>
-        <div class="title">WELCOME AGENT </div>
+        <div class="title">WELCOME ADMIN</div>
     </nav>
+
+    <container>
+        <div class="details">
+            <img src="images/male avator.png" alt="an avator">
+            <div class="name">first name</div>
+            <div class="name">last name</div>
+            <div class="name">email</div>
+            <div class="name">county</div>
+            <div class="name">sub-county</div>
+        </div>
+        
+    </container>
 </body>
 </html>
