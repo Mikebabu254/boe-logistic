@@ -39,8 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["login_submit"])) {
         if (password_verify($password, $hashed_password)) {
             // Password is correct, log in the user
             $_SESSION["email"] = $email; // Store email in session
-            header("Location: admin_dashboard.php");
+            if($email == 'admin@mail.com'){
+                header("Location: admin_dashboard.php");
+                exit();
+            }else{
+                header("Location: agent_dashboard.php");
             exit();
+            }
+            
         } else {
             // Display an error message if password is incorrect
             $error_message = "Invalid email or password.";

@@ -1,4 +1,6 @@
-
+<?php
+    include 'database/db_edit.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
