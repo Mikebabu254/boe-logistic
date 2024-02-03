@@ -1,5 +1,37 @@
 <?php
-    include 'database/db_dashboard.php';
+    //include 'database/db_dashboard.php';
+
+
+    session_start();
+    // Check if the user is not logged in, redirect to login page
+    if (!isset($_SESSION["email"])) {
+        header("Location: index.php");
+        exit();
+    }
+
+
+    include 'database/db_connection.php';
+
+    if($conn->connect_error){
+        die("connection failed:" .$conn-> connect_error);
+    }
+
+    $user_id = $_SESSION['user_id'];
+
+    $sql = "SELECT * FROM agents where id = $user_id";
+    $result = $conn->query($sql);
+
+    if($result->num_rows>0){
+        $userDetails = $result->fetch_assoc();
+    }else{
+        echo "results not found";
+        exit();
+    }
+
+    // Close the database connection
+    $conn->close();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -17,12 +49,12 @@
 
     <container>
         <div class="details">
-            <img src="images/male avator.png" alt="an avator">
-            <div class="name">first name</div>
-            <div class="name">last name</div>
-            <div class="name">email</div>
-            <div class="name">county</div>
-            <div class="name">sub-county</div>
+        <img src="images/male avator.png" alt="an avatar">
+            <div class="name">First Name: <?php echo $userDetails['first_name']; ?></div>
+            <div class="name">Last Name: <?php echo $userDetails['second_name']; ?></div>
+            <div class="name">Email: <?php echo $userDetails['email']; ?></div>
+            <div class="name">County: <?php echo $userDetails['county']; ?></div>
+            <div class="name">Sub-county: <?php echo $userDetails['sub_county']; ?></div>
         </div>
         
     </container>
