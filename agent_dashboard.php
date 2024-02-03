@@ -25,7 +25,7 @@ if (!isset($_SESSION["email"])) {
     </div>-->
 
     <div class="menu">
-        <button class="btn" id="dashboard">dashboard</button>
+        <button class="btn1" id="dashboard">dashboard</button>
         <button class="btn" id="addUsers">dummy button</button>
         <button class="btn" id="addUsers">dummy button</button>
         <a href="logout.php"><button class="btn" id="logout">logout</button></a>

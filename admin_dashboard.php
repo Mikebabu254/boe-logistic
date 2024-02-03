@@ -20,7 +20,7 @@ if (!isset($_SESSION["email"])) {
 </head>
 <body>
     <div class="menu">
-        <button class="btn" id="dashboard">dashboard</button>
+        <button class="btn1" id="dashboard">dashboard</button>
         <button class="btn" id="viewList">agents</button>
         <button class="btn" id="addUsers">add users</button>
         <button class="btn" id="addUsers">dummy button</button>

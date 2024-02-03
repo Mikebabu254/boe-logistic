@@ -14,7 +14,7 @@
 </head>
 <body>
     <nav>
-        <div class="title">WELCOME ADMIN</div>
+        <div class="title">WELCOME <?php echo $userDetails['first_name'];?></div>
     </nav>
 
     <container>
