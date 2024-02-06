@@ -26,6 +26,7 @@
             <div class="name">County: <?php echo $userDetails['county']; ?></div>
             <div class="name">Sub-county: <?php echo $userDetails['sub_county']; ?></div>
         </div>
+        <div class="loader"></div>
         
     </container>
 </body>
