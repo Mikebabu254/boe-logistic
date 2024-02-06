@@ -24,15 +24,26 @@ if (!isset($_SESSION["email"])) {
       <a href="logout.php"><button class="btn" id="logout">logout</button></a>
     </div>-->
 
-    <div class="menu">
+    <nav>
+      <img src="images/icons.jpg">
+      <ul>
+          <li>Dashboard</li>
+          <li>Account</li>
+          <li>Inventory</li>
+          <li><a href="logout.php">Logout</li>
+      </ul>
+  </nav>
+
+
+    <!--<div class="menu">
         <button class="btn1" id="dashboard">dashboard</button>
         <button class="btn" id="addUsers">dummy button</button>
         <button class="btn" id="addUsers">dummy button</button>
         <a href="logout.php"><button class="btn" id="logout">logout</button></a>
-    </div>
+    </div>-->
 
     <div class="frm">
-        <iframe src="dashboard.php" id="dashFrame" class="dashboard"></iframe>
+        <iframe src="account.php" id="dashFrame" class="dashboard"></iframe>
     </div>
 
   <script src="js file/scipt.js"></script>
