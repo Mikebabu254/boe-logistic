@@ -1,7 +1,8 @@
 *{
-    margin: 0px;
-    padding: 0px;
-    border: 0px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: white;
 }
 
 :root{
@@ -11,34 +12,114 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Plex', -apple-system, Arial, Sans-Serif;
     background-image: url('../images/icons.jpg');
-    background-size: contain;    
+    background-size: contain;
+    height: 100vh;
+    
 }
 
-nav{
+.back{
     width: 100%;
-    height: 100px;
-    font-size: 50PX;
-    background-color: var(--blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-img{
-    border-radius: 50%;
-    margin: 10px;
-}
-
-.details{
+    height: 100%;
     background-color: transparent;
-    padding-top: 20px;
-    font-size: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(3px);
 }
 
+.txt{
+    color: black;
+    position: absolute;
+    margin: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.txt1{
+    font-weight: bold;
+    color: black;
+}
+
+container{
+    width: 100%;
+    margin-top: 50px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
+
+.recieved_item{
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--blue);
+    border-radius: 20px;
+    width: 50vw;
+    height: 200px;
+}
+
+.sent_item{
+    margin: 10px;
+    padding: 10px;
+    background-color: var(--gold);
+    border-radius: 20px;
+    width: 50vw;
+    height: 200px;
+}
+
+.rec_img{
+    width: 40px;
+}
+
+table{
+    margin-left: -40px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+.contain{
+    width: 100%;
+    height: 300px;
+    margin-top: 50px;
+    position: absolute;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.pending{
+    border-radius: 20px;
+    width: 90%;
+    background-color: #0d4683;
+}
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .loader::before,
+  .loader::after {    
+    content:"";
+    grid-area: 1/1;
+    --c:no-repeat radial-gradient(farthest-side,#c7943f 92%,#0000);
+    background: 
+      var(--c) 50%  0, 
+      var(--c) 50%  100%, 
+      var(--c) 100% 50%, 
+      var(--c) 0    50%;
+    background-size: 12px 12px;
+    animation: l12 1s infinite;
+  }
+  .loader::before {
+    margin: 4px;
+    filter: hue-rotate(180deg) brightness(0.6); /* Adjust brightness to 80% */
+    background-size: 8px 8px;
+    animation-timing-function: linear;
+}
+
+  
+  @keyframes l12 { 
+    100%{transform: rotate(.5turn)}
+  }
