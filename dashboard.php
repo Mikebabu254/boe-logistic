@@ -1,3 +1,9 @@
+<?php
+
+    include 'database/db_dashboard.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +14,9 @@
 </head>
 <body>
     <div class="back">
-        <div class="txt">Welcome, </div>
+
+        <div class="txt">Welcome, <?php echo $firstName; ?></div>
+
 
         <container>
             <div class="recieved_item">
