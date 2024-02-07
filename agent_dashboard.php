@@ -27,10 +27,10 @@ if (!isset($_SESSION["email"])) {
     <nav>
       <img src="images/icons.jpg">
       <ul>
-          <li>Dashboard</li>
-          <li>Account</li>
-          <li>Inventory</li>
-          <li><a href="logout.php">Logoout</li>
+          <li><a href="#" id="dashboard">Dashboard</a></li>
+          <li><a href="#" id="account">Account</a></li>
+          <li><a href="#">Inventory</a></li>
+          <li><a href="logout.php">Logout</a></li>
       </ul>
   </nav>
 
@@ -43,7 +43,8 @@ if (!isset($_SESSION["email"])) {
     </div>-->
 
     <div class="frm">
-        <iframe src="account.php" id="dashFrame" class="dashboard"></iframe>
+        <iframe src="dashboard.php" id="dashFrame" class="dashboard"></iframe>
+        <iframe src="account.php" id="accountFrame" class="account"></iframe>
     </div>
 
   <script src="js file/scipt.js"></script>

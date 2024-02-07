@@ -2,7 +2,7 @@
 //.............for admin dashboard.........
 
 
-
+/*
 var addUser = document.getElementById('addUsers');
 var regFrame = document.getElementById('regFrame');
 var userList = document.getElementById('userList');
@@ -39,7 +39,8 @@ dashboard.onclick = function(){
     viewList.style.backgroundColor=hiddenColor;
     addUser.style.backgroundColor=hiddenColor;
     dashboard.style.backgroundColor=visibleColor;
-}
+}*/
+
 /*function showAgentDetails(tab) {
     // Reset styles for all buttons
     const buttons = document.querySelectorAll('#agentMenu button');
@@ -67,4 +68,18 @@ dashboard.onclick = function(){
   }
   */
 
-//.......for agents dhasboard..........
+//.......for agents dashboard..........
+var dashboard = document.getElementById("dashboard");
+var dashFrame = document.getElementById("dashFrame");
+var accountFrame = document.getElementById("accountFrame");
+var account = document.getElementById("account");
+
+dashboard.onclick = function(){
+  accountFrame.style.visibility="hidden";
+  dashFrame.style.visibility="visible"; 
+}
+
+account.onclick = function(){
+  accountFrame.style.visibility="visible";
+  dashFrame.style.visibility="hidden"; 
+}
