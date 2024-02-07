@@ -30,7 +30,7 @@ if (!isset($_SESSION["email"])) {
           <li>Dashboard</li>
           <li>Account</li>
           <li>Inventory</li>
-          <li><a href="logout.php">Logout</li>
+          <li><a href="logout.php">Logoout</li>
       </ul>
   </nav>
 
