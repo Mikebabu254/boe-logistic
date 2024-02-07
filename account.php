@@ -17,14 +17,42 @@
 
     <container>
         <div class="details">
-        <img src="images/male avator.png" alt="an avatar">
-            <div class="name">First Name: <?php echo $userDetails['first_name']; ?></div>
-            <div class="name">Last Name: <?php echo $userDetails['second_name']; ?></div>
-            <div class="name">Email: <?php echo $userDetails['email']; ?></div>
-            <div class="name">County: <?php echo $userDetails['county']; ?></div>
-            <div class="name">Sub-county: <?php echo $userDetails['sub_county']; ?></div>
+        <img src="images/male avator.png" class="img_avatar" alt="an avatar">
+            <div class="name">
+                <div class="name"> <?php echo $userDetails['first_name']; ?></div>
+                <div class="name"> <?php echo $userDetails['second_name']; ?></div>
+            </div>
+            
+            <div class="email"> <?php echo $userDetails['email']; ?></div>
+            <div class="location"> <?php echo $userDetails['county']; ?></div>
+            <div class="location"> <?php echo $userDetails['sub_county']; ?></div>
         </div>
         
     </container>
+    <div class="recieved_transactions">
+        <table>
+            <tr>
+                
+                    <th class="text"> Date Dispatched</th>
+                    <th class="text"> Recieved items</th>
+                    <th class="text"> Item Number </th>
+                    <th class="text"> Date recieved </th>
+                
+            </tr>
+        </table>
+    </div>
+    <div class="sent_transactions">
+        <table>
+            <tr>
+                
+                    <th class="text"> Date sent </th>
+                    <th class="text"> Sent items</th>
+                    <th class="text"> Item Number </th>
+                    <th class="text"> Date Delivered </th>
+                
+            </tr>
+            
+        </table>
+    </div>
 </body>
 </html>
