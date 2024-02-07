@@ -27,7 +27,7 @@
             <div class="location"> <?php echo $userDetails['county']; ?></div>
             <div class="location"> <?php echo $userDetails['sub_county']; ?></div>
         </div>
-        
+       
     </container>
     <div class="recieved_transactions">
         <table>

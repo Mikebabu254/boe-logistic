@@ -19,23 +19,27 @@ if (!isset($_SESSION["email"])) {
     <link rel="stylesheet" href="styles/admin.css">
 </head>
 <body>
-    <div class="menu">
-        <button class="btn1" id="dashboard">dashboard</button>
-        <button class="btn" id="viewList">agents</button>
-        <button class="btn" id="addUsers">add users</button>
-        <button class="btn" id="addUsers">dummy button</button>
-        <button class="btn" id="addUsers">dummy button</button>
-        <a href="logout.php"><button class="btn" id="logout">logout</button></a>
-    </div>
+   
+    <nav>
+      <img src="images/icons.jpg">
+      <ul>
+          <li><a href="#" id="dashboard">Agents</a></li>
+          <li><a href="#" id="account">Account</a></li>
+          <li><a href="#" id="sent">Register</a></li>
+          <li><a href="#" id="inventory">Inventory</a></li>
+          <li><a href="logout.php">Logout</a></li>
+      </ul>
+  </nav>
 
     <div class="frm">
-        <iframe src="user.php" id="userList" class="listFrame"></iframe>
-        <iframe src="registration.php" id="regFrame" class="regFrame"></iframe>
-        <iframe src="dashboard.php" id="dashFrame" class="dashboard"></iframe>
+        <iframe src="user.php" id="dashFrame" class="dashboard"></iframe>
+        <iframe src="account.php" id="accountFrame" class="account"></iframe>
+        <iframe src="registration.php" id="sentFrame" class="sent"></iframe>
+        <iframe src="inventory.php" id="inventoryFrame" class="inventory"></iframe>
     </div>
 
     <div class="details">
-        dfvdf v
+        
     </div>
     
 
