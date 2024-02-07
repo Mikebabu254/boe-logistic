@@ -14,37 +14,26 @@ if (!isset($_SESSION["email"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agent Details</title>
-  <link rel="stylesheet" href="styles/admin.css">
+  <link rel="stylesheet" href="styles/agent_dashboard.css">
 </head>
 <body>
-    <!--<div id="agentMenu">
-      <button onclick="showAgentDetails('profile')">Profile</button>
-      <button onclick="showAgentDetails('ordersSent')">Orders Sent</button>
-      <button onclick="showAgentDetails('ordersReceived')">Orders Received</button>
-      <a href="logout.php"><button class="btn" id="logout">logout</button></a>
-    </div>-->
-
+    
     <nav>
       <img src="images/icons.jpg">
       <ul>
           <li><a href="#" id="dashboard">Dashboard</a></li>
           <li><a href="#" id="account">Account</a></li>
-          <li><a href="#">Inventory</a></li>
+          <li><a href="#" id="sent">Sent</a></li>
+          <li><a href="#" id="inventory">Inventory</a></li>
           <li><a href="logout.php">Logout</a></li>
       </ul>
   </nav>
 
-
-    <!--<div class="menu">
-        <button class="btn1" id="dashboard">dashboard</button>
-        <button class="btn" id="addUsers">dummy button</button>
-        <button class="btn" id="addUsers">dummy button</button>
-        <a href="logout.php"><button class="btn" id="logout">logout</button></a>
-    </div>-->
-
     <div class="frm">
         <iframe src="dashboard.php" id="dashFrame" class="dashboard"></iframe>
         <iframe src="account.php" id="accountFrame" class="account"></iframe>
+        <iframe src="sent.php" id="sentFrame" class="sent"></iframe>
+        <iframe src="inventory.php" id="inventoryFrame" class="inventory"></iframe>
     </div>
 
   <script src="js file/scipt.js"></script>

@@ -18,6 +18,7 @@ body {
     height: auto;
 }
 
+/*-------navingation bar-------------*/
 nav {
     background-color: var(--blue);
     color: white;
@@ -55,56 +56,7 @@ li a {
     cursor: pointer;
 }
 
-.menu{
-    width: 300px;
-    height: 99%;
-    position: absolute;
-    margin-left: 0px;
-    background-color: var(--blue);
-    z-index: 100;
-}
 
-.btn{
-    width: 100%;
-    height: 50px;
-    border: none;
-    margin-top: 5px;
-    background-color: var(--gold);
-}
-
-
-.btn1{
-    width: 100%;
-    height: 50px;
-    border: none;
-    margin-top: 5px;
-    background-color: var(--blue);
-}
-
-.listFrame{
-    margin-left: 0px;
-    width: 100%;
-    height: 99%;
-    visibility: hidden;
-    position: absolute;
-    
-}
-
-.regFrame{
-    margin-left: 0px;
-    width: 100vw;
-    height: 100%;
-    visibility: hidden;
-    position: absolute;
-}
-
-.dashboard{
-    margin-left: 0px;
-    width: 100%;
-    height: 99%;
-    visibility: visible;
-    position: absolute;
-}
 /*----------frame-----------*/
 .frm{
     margin-top: 100px;
@@ -116,10 +68,12 @@ li a {
     position: absolute;
 }
 
-.details{
-    width: 500px;
-    height: 200px;
-    background-color: var(--gold);
+.dashboard{
+    margin-left: 0px;
+    width: 100%;
+    height: 99%;
+    visibility: visible;
+    position: absolute;
 }
 
 .account{
