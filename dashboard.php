@@ -14,7 +14,6 @@
 </head>
 <body>
     <div class="back">
-
         <div class="txt">Welcome, <?php echo $firstName; ?></div>
 
 
