@@ -1,8 +1,8 @@
 <?php
     session_start();
-    
-    if (!isset($_SESSION["email"])) {
-        header("Location: index.php");
+
+    if (!isset($_SESSION["email"]) || ($_SESSION["email"] != "admin@mail.com")) {
+        header("Location: agent_dashboard.php");
         exit();
     }
 
