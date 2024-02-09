@@ -108,3 +108,9 @@ inventory.onclick = function(){
   accountFrame.style.visibility="hidden";
   dashFrame.style.visibility="hidden"; 
 }
+
+
+//......sent.php...........
+
+
+
