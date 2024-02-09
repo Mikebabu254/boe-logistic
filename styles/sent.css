@@ -46,6 +46,8 @@ body {
 .item_details{
     display: flex;
     justify-content: space-between;
+    height: 4vw;
+    margin-top: 30px;
 }
 .date_time{
     display: flex;
@@ -77,12 +79,19 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 50px;
     transition: 0.5s;
+    margin: 5px;
     
 }
+.butn:hover {
+    background-color:var(--blue);
+}
 .item_no{
-   
-    height: 20px;
-    margin-top: 60px;
+   margin: 15px;
+}
+.agentname{
+    
+    margin: 10px;
+    font-size: 20px;
+    
 }

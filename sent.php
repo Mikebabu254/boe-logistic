@@ -8,8 +8,13 @@
 
 </head>
 <body>
-    <div class="sent_form">
-        <div class="text"> Sender</div>
+    <div class="sent_form"> 
+            
+
+            <div class="text"> Sender</div>
+            <div class="agentname">
+            Delivery Agent Name :
+            </div>
             <input type="text" placeholder="Item Name" name="itemname" class="itemdet" required>
             
         <div class="item_details">
@@ -21,8 +26,8 @@
             <button class="butn">Generate</button>
 
         </div>  
-
-        <input type="text" placeholder="Delivery Agent Name" name="name" class="input" required>
+      
+        
 
     <div class="date_time"> 
             <input type="date" placeholder="Date" name="date" class="input" required>
