@@ -41,7 +41,7 @@
             var rand_number = Math.floor(Math.random(1, 100)*100);
             console.log("hello");
             console.log(rand_number);
-            item_No.innerHTML = rand_number;
+            item_No.innerHTML = 'item no: ' + rand_number;
         }
 
     </script>
