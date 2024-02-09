@@ -45,7 +45,7 @@ body {
 }
 .item_details{
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
 }
 .date_time{
     display: flex;
@@ -59,4 +59,30 @@ body {
     color: black;
     font-size: 30px;
     font-weight: bold;
+}
+.itemdet{
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+.butn{
+    background-color: var(--gold);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 50px;
+    transition: 0.5s;
+    
+}
+.item_no{
+   
+    height: 20px;
+    margin-top: 60px;
 }

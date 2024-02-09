@@ -10,11 +10,15 @@
 <body>
     <div class="sent_form">
         <div class="text"> Sender</div>
-
+            <input type="text" placeholder="Item Name" name="itemname" class="itemdet" required>
+            
         <div class="item_details">
 
-            <input type="text" placeholder="Item Name" name="itemname" class="input" required>
-            <input type="text" placeholder="Item No" name="itemno" class="input" required>
+            
+           
+            
+            <div class="item_no"> Item No: </div>
+            <button class="butn">Generate</button>
 
         </div>  
 
