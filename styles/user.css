@@ -59,7 +59,7 @@ nav{
 table{
     width: 100%;
     background-color: transparent;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(0px);
     
 }
 

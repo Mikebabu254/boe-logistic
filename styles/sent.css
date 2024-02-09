@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: white;
+}
+
+:root{
+    --blue: #0d4683;
+    --gold: #c7943f;
+
+}
+
+body {
+    font-family: 'Plex', -apple-system, Arial, Sans-Serif;
+    background-image: url('../images/icons.jpg');
+    background-size: contain;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.sent_form{
+    background-color: transparent;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    height: 450px;
+    
+    text-align: center;
+    backdrop-filter: blur(20px);
+    
+}
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    
+}
+.item_details{
+    display: flex;
+    gap: 10px;
+}
+.date_time{
+    display: flex;
+    gap: 10px;
+}
+.location{
+    display: flex;
+    gap: 10px;
+}
+.text{
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+}
