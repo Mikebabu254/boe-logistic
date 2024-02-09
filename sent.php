@@ -16,10 +16,10 @@
         </div>
         <input type="text" placeholder="Item Name" id="itemName" name="itemname" class="itemdet" required>
             
-        <div class="item_details">
+        <!--<div class="item_details">
             <div class="item_no" id="itemNo"> Item No: </div>
             <button class="butn" id="randNoGen">Generate</button>
-        </div>  
+        </div>  -->
       
         <div class="date_time"> 
             <input type="date" placeholder="Date" id="dateSend" name="date" class="input" required>
@@ -33,21 +33,6 @@
 
     </div>
     
-    <script>
-        var rand_No = document.getElementById('randNoGen');
-        var item_No = document.getElementById('itemNo');
-        var itemName = document.getElementById('itemName').value;
-        
-
-        rand_No.onclick = function(){
-            var rand_number = Math.floor(Math.random(1, 100)*100);
-            console.log("hello");
-            console.log(rand_number);
-            
-            item_No.innerHTML = 'item no: ' , rand_number;
-        
-        }
-
-    </script>
+    
 </body>
 </html>
