@@ -30,10 +30,10 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] == "admin@mail.com")) {
   </nav>
 
     <div class="frm">
-        <iframe src="dashboard.php" id="dashFrame" class="dashboard"></iframe>
-        <iframe src="account.php" id="accountFrame" class="account"></iframe>
-        <iframe src="sent.php" id="sentFrame" class="sent"></iframe>
-        <iframe src="inventory.php" id="inventoryFrame" class="inventory"></iframe>
+        <iframe src="dashboard.php" id="dashFrame" class="frmStyle"></iframe>
+        <iframe src="account.php" id="accountFrame" class="frmStyle"></iframe>
+        <iframe src="sent.php" id="sentFrame" class="frmStyle"></iframe>
+        <iframe src="inventory.php" id="inventoryFrame" class="frmStyle"></iframe>
     </div>
 
   <script src="js file/scipt.js"></script>
