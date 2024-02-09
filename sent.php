@@ -21,8 +21,8 @@
         <input type="text" placeholder="Delivery Agent Name" name="name" class="input" required>
 
     <div class="date_time"> 
-            <input type="text" placeholder="Date" name="date" class="input" required>
-            <input type="text" placeholder="Time" name="time" class="input" required>
+            <input type="date" placeholder="Date" name="date" class="input" required>
+            <input type="time" placeholder="Time" name="time" class="input" required>
 
 
     </div>
