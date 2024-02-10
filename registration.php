@@ -33,13 +33,58 @@
             <input type="password" placeholder="confirm password" name="confirmPassword" class="input" required>
         </div>
         <div class="names">
-            <input type="text" placeholder="County" class="input" name="county" required>
-            <input type="text" placeholder=" Constituency" name="constituency" class="input" required>
+            COUNTY
+            <input type="radio" name="county" value="NAIROBI">NAIROBI
+            <input type="radio" name="county" value="KIAMBU">KIAMBU
+        </div>
+
+        <div class="constituency">
+    <!-- Constituency options will be added dynamically here -->
         </div>
         
         
         <input type="submit" value="submit" class="submitBtn">
     </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const countyRadio = document.getElementsByName("county");
+            const constituencyDiv = document.querySelector(".constituency");
+
+            for (let i = 0; i < countyRadio.length; i++) {
+                countyRadio[i].addEventListener("change", function() {
+                    const selectedCounty = this.value;
+
+                    if (selectedCounty === "NAIROBI") {
+                        updateConstituency(["KASARANI", "EMBAKASI"]);
+                    } else if (selectedCounty === "KIAMBU") {
+                        updateConstituency(["RUIRU", "JUJA"]);
+                    } else {
+                        updateConstituency([]);
+                    }
+                });
+            }
+
+            function updateConstituency(options) {
+                constituencyDiv.innerHTML = "";
+
+                for (let i = 0; i < options.length; i++) {
+                    const input = document.createElement("input");
+                    input.type = "radio";
+                    input.name = "constituency";
+                    input.value = options[i];
+                    input.id = options[i];
+
+                    const label = document.createElement("label");
+                    label.htmlFor = options[i];
+                    label.innerText = options[i];
+
+                    constituencyDiv.appendChild(input);
+                    constituencyDiv.appendChild(label);
+                }
+            }
+        });
+    </script>
 
 </body>
 </html>
