@@ -1,3 +1,7 @@
+<?php
+    include 'database/db_sent.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +16,7 @@
     
         <div class="text"> Sender</div>
         <div class="agentname">
-            Delivery Agent Name :
+            <?php echo $firstName; ?>
         </div>
         <input type="text" placeholder="Item Name" id="itemName" name="itemname" class="itemdet" required>
             
