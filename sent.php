@@ -20,7 +20,10 @@
             <div class="item_no" id="itemNo"> Item No: </div>
             <button class="butn" id="randNoGen">Generate</button>
         </div>  -->
-      
+        <div class="lable">
+            <div class="delivery-date">Date of delivery</div>
+            <div class="delivery-date">Time of delivery</div>
+        </div>
         <div class="date_time"> 
             <input type="date" placeholder="Date" id="dateSend" name="date" class="input" required>
             <input type="time" placeholder="Time" id="timeSend" name="time" class="input" required>
@@ -30,6 +33,25 @@
             <input type="text" placeholder="County" name="county" class="input" required>
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>
+        <div class="text"> Reciever</div>
+        <div class="agentname">
+            Recieving Agent Name :
+        </div>
+        <div class="lable">
+            <div class="delivery-date">Arrival Date</div>
+            <div class="delivery-date">Arrival Time</div>
+        </div>
+        <div class="date_time"> 
+            <input type="date" placeholder="Date" id="dateSend" name="date" class="input" required>
+            <input type="time" placeholder="Time" id="timeSend" name="time" class="input" required>
+
+        </div>
+        <div class="location">
+            <input type="text" placeholder="County" name="county" class="input" required>
+            <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
+        </div>
+        
+        
 
     </div>
     
