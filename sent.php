@@ -37,9 +37,9 @@
             <input type="text" placeholder="County" name="county" class="input" required>
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>
-        <div class="text"> Reciever</div>
+        <div class="text"> Receiver</div>
         <div class="agentname">
-            Recieving Agent Name :
+            Receiving Agent Name :
         </div>
         <div class="lable">
             <div class="delivery-date">Arrival Date</div>

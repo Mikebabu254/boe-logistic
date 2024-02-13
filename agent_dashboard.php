@@ -23,7 +23,7 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] == "admin@mail.com")) {
       <ul>
           <li><a href="#" id="dashboard">Dashboard</a></li>
           <li><a href="#" id="account">Account</a></li>
-          <li><a href="#" id="sent">Sent</a></li>
+          <li><a href="#" id="send">Send</a></li>
           <li><a href="#" id="inventory">Inventory</a></li>
           <li><a href="logout.php">Logout</a></li>
       </ul>
@@ -32,7 +32,7 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] == "admin@mail.com")) {
     <div class="frm">
         <iframe src="dashboard.php" id="dashFrame" class="dashFrame"></iframe>
         <iframe src="account.php" id="accountFrame" class="accountFrame"></iframe>
-        <iframe src="sent.php" id="sentFrame" class="sentFrame"></iframe>
+        <iframe src="send.php" id="sendFrame" class="sendFrame"></iframe>
         <iframe src="inventory.php" id="inventoryFrame" class="inventoryFrame"></iframe>
     </div>
 
