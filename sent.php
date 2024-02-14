@@ -33,10 +33,20 @@
             <input type="time" placeholder="Time" id="timeSend" name="timeSend" class="input" required>
 
         </div>
-        <div class="location">
+        <!--<div class="location">
             <input type="text" placeholder="County" name="county" class="input" required>
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
+        </div>-->
+        <div class="names">
+            COUNTY
+            <input type="radio" name="county" value="NAIROBI">NAIROBI
+            <input type="radio" name="county" value="KIAMBU">KIAMBU
         </div>
+
+        <div class="constituency">
+    <!-- Constituency options will be added dynamically here -->
+        </div>
+
         <div class="text"> Receiver</div>
         <div class="agentname">
             Receiving Agent Name :
@@ -55,8 +65,49 @@
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>
 
+        <input type="submit" value="submit">
+
     </form>
     
     
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const countyRadio = document.getElementsByName("county");
+            const constituencyDiv = document.querySelector(".constituency");
+
+            for (let i = 0; i < countyRadio.length; i++) {
+                countyRadio[i].addEventListener("change", function() {
+                    const selectedCounty = this.value;
+
+                    if (selectedCounty === "NAIROBI") {
+                        updateConstituency(["KASARANI", "EMBAKASI"]);
+                    } else if (selectedCounty === "KIAMBU") {
+                        updateConstituency(["RUIRU", "JUJA"]);
+                    } else {
+                        updateConstituency([]);
+                    }
+                });
+            }
+
+            function updateConstituency(options) {
+                constituencyDiv.innerHTML = "";
+
+                for (let i = 0; i < options.length; i++) {
+                    const input = document.createElement("input");
+                    input.type = "radio";
+                    input.name = "constituency";
+                    input.value = options[i];
+                    input.id = options[i];
+
+                    const label = document.createElement("label");
+                    label.htmlFor = options[i];
+                    label.innerText = options[i];
+
+                    constituencyDiv.appendChild(input);
+                    constituencyDiv.appendChild(label);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

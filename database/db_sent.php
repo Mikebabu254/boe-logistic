@@ -1,7 +1,7 @@
 <?php
 
     session_start();
-    if(!isset($_SESSION["email"])){
+    if(!isset($_SESSION["email"])|| ($_SESSION["email"] == "admin@mail.com")){
         header("location: index.php");
         exit();
     }
@@ -35,9 +35,9 @@
         $time_send = $_POST['timeSend'];
         $county = $_POST['county'];
         $subconty = $_POST['subcounty'];
-        $reciever = $_POST[''];
+        //$reciever = $_POST[''];
     
-        $sqlCode = "INSERT INTO goods(item_name,sender_name,date_send,time_send,county,subcounty,reciever)VALUES($itemName,$firstName,$dateSend,$time_send,$county,$subconty,$reciever)";
+        $sqlCode = "INSERT INTO goods(item_name,sender_name,date_send,time_send,county,subcounty,reciever)VALUES($itemName,$firstName,$dateSend,$time_send,$county,$subconty)";
     }
     
 
