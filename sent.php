@@ -10,45 +10,7 @@
     <title>Sent</title>
     <link rel="stylesheet" href="styles/sent.css">
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const countyRadio = document.getElementsByName("county");
-            const constituencyDiv = document.querySelector(".constituency");
-
-            for (let i = 0; i < countyRadio.length; i++) {
-                countyRadio[i].addEventListener("change", function() {
-                    const selectedCounty = this.value;
-
-                    if (selectedCounty === "NAIROBI") {
-                        updateConstituency(["KASARANI", "EMBAKASI"]);
-                    } else if (selectedCounty === "KIAMBU") {
-                        updateConstituency(["RUIRU", "JUJA"]);
-                    } else {
-                        updateConstituency([]);
-                    }
-                });
-            }
-
-            function updateConstituency(options) {
-                constituencyDiv.innerHTML = "";
-
-                for (let i = 0; i < options.length; i++) {
-                    const input = document.createElement("input");
-                    input.type = "radio";
-                    input.name = "constituency";
-                    input.value = options[i];
-                    input.id = options[i];
-
-                    const label = document.createElement("label");
-                    label.htmlFor = options[i];
-                    label.innerText = options[i];
-
-                    constituencyDiv.appendChild(input);
-                    constituencyDiv.appendChild(label);
-                }
-            }
-        });
-    </script>
+    
 </head>
 <body>
     <form action="sent.php" method="post" class="sent_form">
@@ -110,7 +72,45 @@
 
     </form>
     
-    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const countyRadio = document.getElementsByName("county");
+            const constituencyDiv = document.querySelector(".constituency");
+
+            for (let i = 0; i < countyRadio.length; i++) {
+                countyRadio[i].addEventListener("change", function() {
+                    const selectedCounty = this.value;
+
+                    if (selectedCounty === "NAIROBI") {
+                        updateConstituency(["RUARAKA","ROYSAMBU","KASARANI", "EMBAKASI CENTRAL","DAGORETTI SOUTH","DAGORETTI NORTH","WESTLANDS"]);
+                    } else if (selectedCounty === "KIAMBU") {
+                        updateConstituency(["RUIRU", "JUJA"]);
+                    } else {
+                        updateConstituency([]);
+                    }
+                });
+            }
+
+            function updateConstituency(options) {
+                constituencyDiv.innerHTML = "";
+
+                for (let i = 0; i < options.length; i++) {
+                    const input = document.createElement("input");
+                    input.type = "radio";
+                    input.name = "constituency";
+                    input.value = options[i];
+                    input.id = options[i];
+
+                    const label = document.createElement("label");
+                    label.htmlFor = options[i];
+                    label.innerText = options[i];
+
+                    constituencyDiv.appendChild(input);
+                    constituencyDiv.appendChild(label);
+                }
+            }
+        });
+    </script>
     
 </body>
 </html>
