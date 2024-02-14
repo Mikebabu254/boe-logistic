@@ -25,5 +25,21 @@
         exit();
     }
 
+
+    //insert data into table
+
+    if($_SERVER["REQUEST_METHOD"]=="POST"){
+        //  collects agents data about the product
+        $itemName = $_POST['itemName'];
+        $dateSend = $_POST['dateSend'];
+        $time_send = $_POST['timeSend'];
+        $county = $_POST['county'];
+        $subconty = $_POST['subcounty'];
+        $reciever = $_POST[''];
+    
+        $sqlCode = "INSERT INTO goods(item_name,sender_name,date_send,time_send,county,subcounty,reciever)VALUES($itemName,$firstName,$dateSend,$time_send,$county,$subconty,$reciever)";
+    }
+    
+
     $conn->close();
 ?>

@@ -12,13 +12,13 @@
 
 </head>
 <body>
-    <div class="sent_form"> 
-    
+    <form action="sent.php" method="post" class="sent_form">
+        
         <div class="text"> Sender</div>
         <div class="agentname">
             <?php echo $firstName; ?>
         </div>
-        <input type="text" placeholder="Item Name" id="itemName" name="itemname" class="itemdet" required>
+        <input type="text" placeholder="Item Name" id="itemName" name="itemName" class="itemdet" required>
             
         <!--<div class="item_details">
             <div class="item_no" id="itemNo"> Item No: </div>
@@ -29,8 +29,8 @@
             <div class="delivery-date">Time of delivery</div>
         </div>
         <div class="date_time"> 
-            <input type="date" placeholder="Date" id="dateSend" name="date" class="input" required>
-            <input type="time" placeholder="Time" id="timeSend" name="time" class="input" required>
+            <input type="date" placeholder="Date" id="dateSend" name="dateSend" class="input" required>
+            <input type="time" placeholder="Time" id="timeSend" name="timeSend" class="input" required>
 
         </div>
         <div class="location">
@@ -54,10 +54,8 @@
             <input type="text" placeholder="County" name="county" class="input" required>
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>
-        
-        
 
-    </div>
+    </form>
     
     
 </body>
