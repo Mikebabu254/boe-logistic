@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="sent_form">
-    <form action="sent.php" method="post" >
+    <form action="sent.php" method="post" name="searchForm">
         
         <div class="text"> Sender</div>
         <div class="agentname">
@@ -76,7 +76,7 @@
 
     </form>
 
-    <form action="sent.php" class="" method="get">
+    <form action="sent.php" class="" method="get" name="searchForm">
         <input type="search" name="search" placeholder="enter egent location">
         <input type="submit" value="submit">
         <?php

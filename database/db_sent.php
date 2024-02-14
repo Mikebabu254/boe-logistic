@@ -49,6 +49,30 @@
             }
         }
     }
+
+    if($_SERVER["REQUEST_METHOD"]==$_POST){
+        if (isset($_POST['senderForm'])) {
+            // Process data from the sender form
+            $itemName = mysqli_real_escape_string($conn, $_POST['itemName']);
+            $dateSend = mysqli_real_escape_string($conn, $_POST['dateSend']);
+            $timeSend = mysqli_real_escape_string($conn, $_POST['timeSend']);
+            $senderPhone = mysqli_real_escape_string($conn, $_POST['senderPhone']);
+            $receiverPhone = mysqli_real_escape_string($conn, $_POST['receiverPhone']);
+            $selectedCounty = isset($_POST['county']) ? mysqli_real_escape_string($conn, $_POST['county']) : '';
+            $selectedConstituency = isset($_POST['constituency']) ? mysqli_real_escape_string($conn, $_POST['constituency']) : '';
+
+            // Now you can use these variables to insert data into your 'goods' table
+            // Example:
+            $sqlInsert = "INSERT INTO goods (item_name,sender_name,date_send, time_send, county, subcounty,receiver, sender_phone, receiver_phone)
+                          VALUES ('$itemName','$firstName', '$dateSend', '$timeSend', '$senderPhone', '$receiverPhone', '$selectedCounty', '$selectedConstituency')";
+
+            if (mysqli_query($conn, $sqlInsert)) {
+                echo "Data inserted successfully!";
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+        }
+    }
     
     $conn->close();
 ?>
