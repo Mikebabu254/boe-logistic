@@ -24,6 +24,8 @@
         echo "user data not found";
         exit();
     }
+
+    
     
     $conn->close();
 ?>

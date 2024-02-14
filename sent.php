@@ -13,7 +13,8 @@
     
 </head>
 <body>
-    <form action="sent.php" method="post" class="sent_form">
+    <div class="sent_form">
+    <form action="sent.php" method="post" >
         
         <div class="text"> Sender</div>
         <div class="agentname">
@@ -48,7 +49,6 @@
         <!-- Constituency options will be added dynamically here -->
         </div>
 
-        <input type="button" value="submit" id="checkAgentButton">
         <div class="text"> Receiver</div>
         
         <div class="agentname">
@@ -71,6 +71,14 @@
         <input type="submit" value="submit">
 
     </form>
+
+    <form action="sent.php" class="" method="get">
+        <input type="search" name="search" placeholder="enter egent location">
+        <input type="submit" value="submit">
+    </form>
+    </div>
+
+    
     
     <script>
         document.addEventListener("DOMContentLoaded", function() {
