@@ -39,17 +39,21 @@
             <input type="text" placeholder="County" name="county" class="input" required>
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>-->
+        <input type="tel" placeholder="sender's customer phone no"> 
+        <input type="tel" placeholder="receivers's customer phone no"> 
         <div class="names">
             COUNTY
             <input type="radio" name="county" value="NAIROBI">NAIROBI
             <input type="radio" name="county" value="KIAMBU">KIAMBU
         </div>
 
+        
+
         <div class="constituency">
         <!-- Constituency options will be added dynamically here -->
         </div>
 
-        <div class="text"> Receiver</div>
+        <!--<div class="text"> Receiver</div>
         
         <div class="agentname">
             Receiving Agent Name :
@@ -66,7 +70,7 @@
         <div class="location">
             <input type="text" placeholder="County" name="county" class="input" required>
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
-        </div>
+        </div>-->
 
         <input type="submit" value="submit">
 
@@ -83,7 +87,7 @@
                 }
             }
         ?>
-         </form>
+    </form>
     </div>
 
     
