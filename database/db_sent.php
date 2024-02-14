@@ -27,5 +27,28 @@
 
     
     
+    if (isset($_GET['search'])) {
+        $search = mysqli_real_escape_string($conn, $_GET['search']);
+    
+        if (empty($search)) {
+            echo "<script>alert('Please enter the location of the delivery');</script>";
+        } else {
+            $sql = "SELECT first_name FROM agents WHERE county LIKE '%$search%' OR sub_county LIKE '%$search%'";
+            $result = mysqli_query($conn, $sql);
+    
+            if (!$result) {
+                die("Query failed: " . mysqli_error($conn));
+            }
+    
+            if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<input type='radio' name='agent' value='" . $row['first_name'] . "'>" . $row['first_name'] . "<br>";
+                }
+            } else {
+                echo "No results found.";
+            }
+        }
+    }
+    
     $conn->close();
 ?>

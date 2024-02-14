@@ -75,7 +75,15 @@
     <form action="sent.php" class="" method="get">
         <input type="search" name="search" placeholder="enter egent location">
         <input type="submit" value="submit">
-    </form>
+        <?php
+            // Check if $result is set before trying to fetch rows
+            if (isset($result)) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo "<input type='radio' name='agent' value='" . $row['first_name'] . "'>" . $row['first_name']."<br>";
+                }
+            }
+        ?>
+         </form>
     </div>
 
     

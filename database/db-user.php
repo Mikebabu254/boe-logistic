@@ -41,7 +41,9 @@
         $sql = "SELECT id, first_name, second_name, email, phone_no, national_id, county, sub_county FROM agents";
         $result = mysqli_query($conn, $sql);
 
-    }if (!$result) {
+    }
+    
+    if (!$result) {
         die("Query failed: " . mysqli_error($conn));
     }
 ?>
