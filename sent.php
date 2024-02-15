@@ -9,37 +9,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sent</title>
     <link rel="stylesheet" href="styles/sent.css">
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     
 </head>
 <body>
-    <form action="sent.php" method="post" class="sent_form" name="searchForm">
+    <form action="sent.php" method="post" class="sent_form" >
         
         <div class="text"> Sender</div>
-        <div class="agentname">
-            <?php echo $firstName; ?>
+        <div class="agentname" name="send_agent">
+            <?php echo $firstName ; ?>
+
         </div>
         <input type="text" placeholder="Item Name" id="itemName" name="itemName" class="itemdet" required>
-            
+        <?php echo $county; ?>
+        <?php echo $sub_county; ?>
         <!--<div class="item_details">
             <div class="item_no" id="itemNo"> Item No: </div>
             <button class="butn" id="randNoGen">Generate</button>
         </div>  -->
-        <div class="lable">
+        <!--<div class="lable">
             <div class="delivery-date">Date of delivery</div>
             <div class="delivery-date">Time of delivery</div>
-        </div>
-        <div class="date_time"> 
+        </div>-->
+        <!--<div class="date_time"> 
             <input type="date" placeholder="Date" id="dateSend" name="dateSend" class="input" required>
             <input type="time" placeholder="Time" id="timeSend" name="timeSend" class="input" required>
 
-        </div>
+        </div>-->
         <!--<div class="location">
             <input type="text" placeholder="County" name="county" class="input" required>
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>-->
-        <input type="tel" placeholder="sender's customer phone no"> 
-        <input type="tel" placeholder="receivers's customer phone no"> 
+        <input type="tel" placeholder="sender's customer phone no" name="sender_phone"> 
+        <input type="tel" placeholder="receivers's customer phone no" name="receiver_phone"> 
         <div class="names">
             COUNTY
             <input type="radio" name="county" value="NAIROBI">NAIROBI
@@ -89,7 +90,7 @@
                     if (selectedCounty === "NAIROBI") {
                         updateConstituency(["RUARAKA","ROYSAMBU","KASARANI", "EMBAKASI CENTRAL","DAGORETTI SOUTH","DAGORETTI NORTH","WESTLANDS"]);
                     } else if (selectedCounty === "KIAMBU") {
-                        updateConstituency(["RUIRU", "JUJA"]);
+                        updateConstituency(["RUIRU","JUJA","GITHUNGURI","KIAMBAA","LIMURU","KABETE","THIKS TOWN","KIAMBU TOWN"]);
                     } else {
                         updateConstituency([]);
                     }

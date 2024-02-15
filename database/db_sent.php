@@ -14,65 +14,48 @@
 
     $userEmail = $_SESSION["email"];
 
-    $sql = "SELECT first_name FROM agents WHERE email='$userEmail'";
+    $sql = "SELECT * FROM agents WHERE email='$userEmail'";
     $results = $conn->query($sql);
 
     if($results->num_rows > 0){
         $userDetails = $results->fetch_assoc();
         $firstName = $userDetails['first_name'];
+        $county = $userDetails['county'];
+        $sub_county = $userDetails['sub_county'];
     }else{
         echo "user data not found";
         exit();
     }
 
-    
-    
-    if (isset($_GET['search'])) {
-        $search = mysqli_real_escape_string($conn, $_GET['search']);
-    
-        if (empty($search)) {
-            echo "<script>alert('Please enter the location of the delivery');</script>";
-        } else {
-            $sql = "SELECT first_name FROM agents WHERE county LIKE '%$search%' OR sub_county LIKE '%$search%'";
-            $result = mysqli_query($conn, $sql);
-    
-            if (!$result) {
-                die("Query failed: " . mysqli_error($conn));
-            }
-    
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<input type='radio' name='agent' value='" . $row['first_name'] . "'>" . $row['first_name'] . "<br>";
-                }
-            } else {
-                echo "No results found.";
-            }
+
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $item_name = $_POST["itemName"];
+        $sender_phone = $_POST["sender_phone"];
+        $receiver_phone = $_POST["receiver_phone"];
+        $county_receiving = $_POST["county"];
+        $subcounty_receiving = $_POST["constituency"];
+
+        //echo $firstName ."<br>" . $item_name ."<br>" . $county ."<br>" . $sub_county ."<br>" . $sender_phone ."<br>" . $receiver_phone  ."<br>" . $county_receiving ."<br>" . $subcounty_receiving;
+
+        $item_name_value = htmlspecialchars($item_name);
+        $first_name_value = htmlspecialchars($firstName);
+        $sender_phone_value = htmlspecialchars($sender_phone);
+        $receiver_phone_value = htmlspecialchars($receiver_phone);
+        $county_receiving_value = htmlspecialchars($county_receiving);
+        $subcounty_receiving_value = htmlspecialchars($subcounty_receiving);
+
+        $stmt = $conn->prepare("INSERT INTO goods(item_name,sender_name,sender_county,sender_subcounty,receiver_county,receiver_subcounty,sender_phone,receiver_phone) VALUES (?,?,?,?,?,?,?,?)");
+        $stmt->bind_param("ssssssss",$item_name,$firstName,$county,$sub_county,$county_receiving,$subcounty_receiving,$sender_phone,$receiver_phone);
+
+        if($stmt->execute()){
+            echo '<script>alert("Registered successfully!");</script> ';
+            header("location: selectAgent.php");
+            exit();
+        }else{
+            echo '<script>alert("Registration failed!");</script>';
         }
     }
-
-    if($_SERVER["REQUEST_METHOD"]==$_POST){
-        if (isset($_POST['senderForm'])) {
-            // Process data from the sender form
-            $itemName = mysqli_real_escape_string($conn, $_POST['itemName']);
-            $dateSend = mysqli_real_escape_string($conn, $_POST['dateSend']);
-            $timeSend = mysqli_real_escape_string($conn, $_POST['timeSend']);
-            $senderPhone = mysqli_real_escape_string($conn, $_POST['senderPhone']);
-            $receiverPhone = mysqli_real_escape_string($conn, $_POST['receiverPhone']);
-            $selectedCounty = isset($_POST['county']) ? mysqli_real_escape_string($conn, $_POST['county']) : '';
-            $selectedConstituency = isset($_POST['constituency']) ? mysqli_real_escape_string($conn, $_POST['constituency']) : '';
-
-            // Now you can use these variables to insert data into your 'goods' table
-            // Example:
-            $sqlInsert = "INSERT INTO goods (item_name,sender_name,date_send, time_send, county, subcounty,receiver, sender_phone, receiver_phone)
-                          VALUES ('$itemName','$firstName', '$dateSend', '$timeSend', '$senderPhone', '$receiverPhone', '$selectedCounty', '$selectedConstituency')";
-
-            if (mysqli_query($conn, $sqlInsert)) {
-                echo "Data inserted successfully!";
-            } else {
-                echo "Error: " . mysqli_error($conn);
-            }
-        }
-    }
+    
     
     $conn->close();
 ?>
