@@ -9,12 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sent</title>
     <link rel="stylesheet" href="styles/sent.css">
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     
 </head>
 <body>
-    <div class="sent_form">
-    <form action="sent.php" method="post" name="searchForm">
+    <form action="sent.php" method="post" class="sent_form" name="searchForm">
         
         <div class="text"> Sender</div>
         <div class="agentname">
@@ -75,20 +74,6 @@
         <input type="submit" value="submit">
 
     </form>
-
-    <form action="sent.php" class="" method="get" name="searchForm">
-        <input type="search" name="search" placeholder="enter egent location">
-        <input type="submit" value="submit">
-        <?php
-            // Check if $result is set before trying to fetch rows
-            if (isset($result)) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<input type='radio' name='agent' value='" . $row['first_name'] . "'>" . $row['first_name']."<br>";
-                }
-            }
-        ?>
-    </form>
-    </div>
 
     
     
