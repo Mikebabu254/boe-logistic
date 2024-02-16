@@ -40,12 +40,12 @@
             <input type="text" placeholder="County" name="county" class="input" required>
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>-->
-        <input type="tel" placeholder="sender's customer phone no" name="sender_phone"> 
-        <input type="tel" placeholder="receivers's customer phone no" name="receiver_phone"> 
+        <input type="tel" placeholder="sender's customer phone no" name="sender_phone" class="input"> 
+        <input type="tel" placeholder="receivers's customer phone no" name="receiver_phone" class="input"> 
         <div class="names">
             COUNTY
-            <input type="radio" name="county" value="NAIROBI">NAIROBI
-            <input type="radio" name="county" value="KIAMBU">KIAMBU
+            <input type="radio" name="county" value="NAIROBI">Nairobi
+            <input type="radio" name="county" value="KIAMBU">Kiambu
         </div>
 
         
@@ -73,7 +73,7 @@
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>-->
 
-        <input type="submit" value="submit">
+        <input type="submit" value="submit" class="butn">
 
     </form>
 
@@ -83,6 +83,9 @@
         document.addEventListener("DOMContentLoaded", function() {
             const countyRadio = document.getElementsByName("county");
             const constituencyDiv = document.querySelector(".constituency");
+            const submitButton = document.querySelector(".butn");
+
+            submitButton.style.transition = "all 200s ease"; 
 
             for (let i = 0; i < countyRadio.length; i++) {
                 countyRadio[i].addEventListener("change", function() {
@@ -114,6 +117,16 @@
 
                     constituencyDiv.appendChild(input);
                     constituencyDiv.appendChild(label);
+                }
+                        if (options.length > 7) {
+                    submitButton.style.position = "absolute";
+                    submitButton.style.bottom = "0";
+                    submitButton.style.right= "0";
+                } else {
+                    // Reset styles to default
+                    submitButton.style.position = "";
+                    submitButton.style.bottom = "";
+                    submitButton.style.right = "";
                 }
             }
         });

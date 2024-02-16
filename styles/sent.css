@@ -83,12 +83,13 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    margin-top: 50px;
     transition: 0.5s;
-    margin: 20px;
+    
 }
 
-.butn:hover {
-    background-color:var(--blue);
+.butn:hover{
+    background-color: var(--blue);
 }
 
 .item_no{
@@ -105,4 +106,33 @@ body {
     justify-content: space-between; 
     margin-top: 30px;
     margin-bottom: -20px;
+} 
+.names{
+    margin-top: 20px;
+    cursor: pointer;
+
 }
+.names input[type="radio"]{
+    cursor: pointer;
+}
+
+
+.constituency{
+   
+}
+.constituency input[type="radio"] {
+    display: flex; 
+    vertical-align: middle;
+    margin-right: 5px; 
+    position: absolute;
+    cursor: pointer;
+}
+
+.constituency label {
+    display:grid; 
+    margin: 10px; 
+    text-align: left; 
+    margin-left:20px;
+    cursor: pointer;
+}
+
