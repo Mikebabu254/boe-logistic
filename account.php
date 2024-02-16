@@ -39,6 +39,18 @@
                 <th class="text"> Date recieved </th>
                 
             </tr>
+            
+        </table>
+    </div>
+    <div class="sent_transactions">
+        <table>
+            <tr>
+                <th class="text"> Date sent </th>
+                <th class="text"> Sent items</th>
+                <th class="text"> Item Number </th>
+                <th class="text"> Date Delivered </th>
+            </tr>
+
             <?php
                 while($row = mysqli_fetch_assoc($results)){
                     echo"<tr>";
@@ -49,18 +61,6 @@
                     echo"</tr>";
                 }
             ?>
-        </table>
-    </div>
-    <div class="sent_transactions">
-        <table>
-            <tr>
-                
-                    <th class="text"> Date sent </th>
-                    <th class="text"> Sent items</th>
-                    <th class="text"> Item Number </th>
-                    <th class="text"> Date Delivered </th>
-                
-            </tr>
             
         </table>
     </div>

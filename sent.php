@@ -12,7 +12,7 @@
     
 </head>
 <body>
-    <form action="sent.php" method="post" class="sent_form" >
+    <form action="sent.php?redirect=selectAgent.php" method="post" class="sent_form" >
         
         <div class="text"> Sender</div>
         <div class="agentname" name="send_agent">

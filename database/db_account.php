@@ -31,15 +31,26 @@
     }
 
 
-
-    $sqlCode = "SELECT * FROM goods WHERE sender_name = '$firstName'";
-    $results = $conn->query($sqlCode);
-
-    if($results->num_rows>0){
-        
+    if($userEmail == "admin@mail.com"){
+        $sqlCode = "SELECT * FROM goods"; /*WHERE sender_name = '$firstName'";*/
+        $results = $conn->query($sqlCode);
+    
+        if($results->num_rows>0){
+            
+        }else{
+            echo "no data found";
+        }
     }else{
-        echo "no data found";
+        $sqlCode = "SELECT * FROM goods WHERE sender_name = '$firstName'";
+        $results = $conn->query($sqlCode);
+    
+        if($results->num_rows>0){
+            
+        }else{
+            echo "no data found";
+        }
     }
+    
 
     // Close the database connection
     $conn->close();
