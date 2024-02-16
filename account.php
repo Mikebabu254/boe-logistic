@@ -39,6 +39,17 @@
                 <th class="text"> Date recieved </th>
                 
             </tr>
+
+            <?php
+                while($row = mysqli_fetch_assoc($resultShow)){
+                    echo"<tr>";
+                        echo "<td>{$row['date_send']}</td>";
+                        echo "<td>{$row['item_name']}</td>";
+                        echo "<td>{$row['item_id']}</td>";
+                        echo "<td>{$row['arrival_date']}</td>";
+                    echo"</tr>";
+                }
+            ?>
             
         </table>
     </div>

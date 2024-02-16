@@ -41,7 +41,7 @@
             echo "no data found";
         }
     }else{
-        $sqlCode = "SELECT * FROM goods WHERE sender_name = '$firstName'";
+        $sqlCode = "SELECT * FROM goods WHERE sender_name = '$firstName' ORDER BY item_id DESC";
         $results = $conn->query($sqlCode);
     
         if($results->num_rows>0){
@@ -50,8 +50,18 @@
             echo "no data found";
         }
     }
-    
 
+    
+    $sqlProgram = "SELECT * FROM goods WHERE receiver = '$firstName' ORDER BY item_id DESC";
+    $resultShow = $conn->query($sqlProgram);
+    
+    if($resultShow->num_rows>0){
+            
+    }else{
+        echo "no data found";
+    }
+    
+    
     // Close the database connection
     $conn->close();
 
