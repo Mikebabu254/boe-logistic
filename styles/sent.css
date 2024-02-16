@@ -49,15 +49,6 @@ body {
     height: 4vw;
     margin-top: 30px;
 }
-.itemdet,
-input[type="tel"] {
-    width: calc(100% - 20px); /* Subtracting padding from width */
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
 .date_time{
     display: flex;
     gap: 10px;
@@ -90,7 +81,7 @@ input[type="tel"] {
     cursor: pointer;
     font-size: 16px;
     transition: 0.5s;
-    margin: 5px;
+    margin: 10px;
     
 }
 .butn:hover {
