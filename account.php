@@ -33,12 +33,22 @@
         <table>
             <tr>
                 
-                    <th class="text"> Date Dispatched</th>
-                    <th class="text"> Recieved items</th>
-                    <th class="text"> Item Number </th>
-                    <th class="text"> Date recieved </th>
+                <th class="text"> Date Dispatched</th>
+                <th class="text"> Recieved items</th>
+                <th class="text"> Item Number </th>
+                <th class="text"> Date recieved </th>
                 
             </tr>
+            <?php
+                while($row = mysqli_fetch_assoc($results)){
+                    echo"<tr>";
+                        echo "<td>{$row['date_send']}</td>";
+                        echo "<td>{$row['item_name']}</td>";
+                        echo "<td>{$row['item_id']}</td>";
+                        echo "<td>{$row['arrival_date']}</td>";
+                    echo"</tr>";
+                }
+            ?>
         </table>
     </div>
     <div class="sent_transactions">

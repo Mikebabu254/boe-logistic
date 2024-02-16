@@ -26,6 +26,9 @@ if ($results->num_rows > 0) {
     exit();
 }
 
+
+
+
 // Close the database connection
 $conn->close();
 ?>

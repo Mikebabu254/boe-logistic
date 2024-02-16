@@ -22,13 +22,27 @@
    
     if ($result->num_rows > 0) {
         $userDetails = $result->fetch_assoc();
+        $firstName = $userDetails['first_name'];
+        
     } else {
         echo "User details not found";
         // You can handle the error or redirect the user to an error page
         exit();
     }
 
+
+
+    $sqlCode = "SELECT * FROM goods WHERE sender_name = '$firstName'";
+    $results = $conn->query($sqlCode);
+
+    if($results->num_rows>0){
+        
+    }else{
+        echo "no data found";
+    }
+
     // Close the database connection
     $conn->close();
 
 ?>
+
