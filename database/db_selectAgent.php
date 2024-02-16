@@ -31,5 +31,44 @@
     $sqlGoods = "SELECT * FROM goods WHERE sender_name='$firstName' ORDER BY item_id DESC LIMIT 1";
     $resultsGoods = $conn->query($sqlGoods);
 
-    $conn->close();
+
+    
+    if ($resultsGoods->num_rows > 0) {
+        $rowOne = mysqli_fetch_assoc($resultsGoods);
+        $receiverSubcounty = $rowOne['receiver_subcounty'];
+
+        //echo $receiverSubcounty;
+    
+        // Fetch agents in the specified receiver subcounty
+        $sqlAgents = "SELECT * FROM agents WHERE sub_county='$receiverSubcounty'";
+        $resultsAgents = $conn->query($sqlAgents);
+    
+
+    } else {
+        echo "No goods data found";
+    }
+
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['agent'])) {
+            $agentName = $_POST['agent'];
+
+            // Update the goods table with the selected agent
+            $updateSql = "UPDATE goods SET receiver='$agentName' WHERE item_id='{$rowOne['item_id']}'";
+
+            if ($conn->query($updateSql) === TRUE) {
+                echo "Agent assigned successfully";
+            } else {
+                echo "Error updating goods table: " . $conn->error;
+            }
+        } else {
+            echo "Please select an agent";
+        }
+
+        $conn->close();
+    }
+    
+
+    
 ?>

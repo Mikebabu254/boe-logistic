@@ -49,6 +49,8 @@
 
         if($stmt->execute()){
             echo '<script>alert("Registered successfully!");</script> ';
+            // Redirect with query parameter
+            $redirectUrl = $_GET['redirect'] ?? 'selectAgent.php';
             header("location: selectAgent.php");
             exit();
         }else{

@@ -13,7 +13,7 @@
     
     <table>
         <tr>
-        <th class="text"> item id</th>
+            <th class="text"> item id</th>
             <th class="text"> item name</th>
             <th class="text"> sender name</th>
             <th class="text"> date send</th>
@@ -23,20 +23,37 @@
             <th class="text"> receiver sub county</th>
         </tr>
         <?php
-            while ($row = mysqli_fetch_assoc($resultsGoods)) {
-                echo "<tr>";
-                    echo "<td>{$row['item_id']}</td>";
-                    echo "<td>{$row['item_name']}</td>";
-                    echo "<td>{$row['sender_name']}</td>";
-                    echo "<td>{$row['date_send']}</td>";
-                    echo "<td>{$row['sender_county']}</td>";
-                    echo "<td>{$row['sender_subcounty']}</td>";
-                    echo "<td>{$row['receiver_county']}</td>";
-                    echo "<td>{$row['receiver_subcounty']}</td>";
-                echo "</tr>";
+            // Fetch the first row
+            $row = mysqli_fetch_assoc($resultsGoods);
+
+            // Display the first row in the table
+            echo "<tr>";
+            echo "<td>{$rowOne['item_id']}</td>";
+            echo "<td>{$rowOne['item_name']}</td>";
+            echo "<td>{$rowOne['sender_name']}</td>";
+            echo "<td>{$rowOne['date_send']}</td>";
+            echo "<td>{$rowOne['sender_county']}</td>";
+            echo "<td>{$rowOne['sender_subcounty']}</td>";
+            echo "<td>{$rowOne['receiver_county']}</td>";
+            echo "<td>{$rowOne['receiver_subcounty']}</td>";
+            echo "</tr>";
+            
+        ?>
+    </table>
+
+    <h2>select agent to recieve the packag: <?php echo $receiverSubcounty; ?></h2>
+        
+    <form method="post" action="selectAgent.php">
+        <?php
+            while ($agentRow = mysqli_fetch_assoc($resultsAgents)) {
+                echo "<label><input type='radio' name='agent' value='{$agentRow['first_name']}' required>{$agentRow['first_name']}</label>";
             }
-            ?>
-        </table>
-    
+        ?>
+
+        <input type="submit" value="Assign Agent">
+    </form>
+
+        
+
 </body>
 </html>
