@@ -118,7 +118,7 @@ body {
 
 
 .constituency{
-   
+   margin: 30px;
 }
 .constituency input[type="radio"] {
     display: flex; 
