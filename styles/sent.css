@@ -26,7 +26,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     width: 300px;
-    height: 90vh;
+    height: 100%;
     text-align: center;
     backdrop-filter: blur(20px);
 }
@@ -83,7 +83,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 50px;
+    margin-top: 30px;
     transition: 0.5s;
     
 }
@@ -118,7 +118,7 @@ body {
 
 
 .constituency{
-   margin: 30px;
+
 }
 .constituency input[type="radio"] {
     display: flex; 

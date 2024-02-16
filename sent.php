@@ -118,16 +118,7 @@
                     constituencyDiv.appendChild(input);
                     constituencyDiv.appendChild(label);
                 }
-                        if (options.length > 6) {
-                    submitButton.style.position = "absolute";
-                    submitButton.style.bottom = "0";
-                    submitButton.style.right= "0";
-                } else {
-                    // Reset styles to default
-                    submitButton.style.position = "";
-                    submitButton.style.bottom = "";
-                    submitButton.style.right = "";
-                }
+              
             }
         });
     </script>
