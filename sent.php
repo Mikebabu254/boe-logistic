@@ -90,7 +90,7 @@
                     if (selectedCounty === "NAIROBI") {
                         updateConstituency(["RUARAKA","ROYSAMBU","KASARANI", "EMBAKASI CENTRAL","DAGORETTI SOUTH","DAGORETTI NORTH","WESTLANDS"]);
                     } else if (selectedCounty === "KIAMBU") {
-                        updateConstituency(["RUIRU","JUJA","GITHUNGURI","KIAMBAA","LIMURU","KABETE","THIKS TOWN","KIAMBU TOWN"]);
+                        updateConstituency(["RUIRU","JUJA","GITHUNGURI","KIAMBAA","LIMURU","KABETE","THIKA TOWN","KIAMBU TOWN"]);
                     } else {
                         updateConstituency([]);
                     }
