@@ -59,6 +59,8 @@
 
             if ($conn->query($updateSql) === TRUE) {
                 echo "Agent assigned successfully";
+                header("location: sent.php");
+                exit();
             } else {
                 echo "Error updating goods table: " . $conn->error;
             }
