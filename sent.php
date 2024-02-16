@@ -17,11 +17,12 @@
         <div class="text"> Sender</div>
         <div class="agentname" name="send_agent">
             <?php echo $firstName ; ?>
-
+            <div class="agent_location">
+            <?php echo $county . ', ' . $sub_county; ?>
+            </div>
         </div>
         <input type="text" placeholder="Item Name" id="itemName" name="itemName" class="itemdet" required>
-        <?php echo $county; ?>
-        <?php echo $sub_county; ?>
+        
         <!--<div class="item_details">
             <div class="item_no" id="itemNo"> Item No: </div>
             <button class="butn" id="randNoGen">Generate</button>
