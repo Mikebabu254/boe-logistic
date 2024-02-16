@@ -118,7 +118,7 @@
                     constituencyDiv.appendChild(input);
                     constituencyDiv.appendChild(label);
                 }
-                        if (options.length > 7) {
+                        if (options.length > 6) {
                     submitButton.style.position = "absolute";
                     submitButton.style.bottom = "0";
                     submitButton.style.right= "0";
