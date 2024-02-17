@@ -50,9 +50,22 @@
             }
         ?>
 
-        <input type="submit" value="Assign Agent">
+        <input type="submit" name="agent" value="Assign Agent">
+
+    
     </form>
 
+        <form method="post" action="selectAgent.php" onsubmit="return confirmDelete()">
+        <button type="submit" name="delete">Delete</button>
+    </form>
+
+    <script>
+        function confirmDelete() {
+            return confirm("Are you sure you want to delete?");
+        }
+    </script>
+
+    
         
 
 </body>

@@ -53,10 +53,10 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['agent'])) {
             $agentName = $_POST['agent'];
-
+    
             // Update the goods table with the selected agent
             $updateSql = "UPDATE goods SET receiver='$agentName' WHERE item_id='{$rowOne['item_id']}'";
-
+    
             if ($conn->query($updateSql) === TRUE) {
                 echo "Agent assigned successfully";
                 header("location: account.php");
@@ -64,12 +64,24 @@
             } else {
                 echo "Error updating goods table: " . $conn->error;
             }
+        } elseif (isset($_POST['delete'])) {
+            // Delete the selected row from the goods table
+            $deleteSql = "DELETE FROM goods WHERE item_id='{$rowOne['item_id']}'";
+    
+            if ($conn->query($deleteSql) === TRUE) {
+                echo "Record deleted successfully";
+                header("location: account.php");
+                exit();
+            } else {
+                echo "Error deleting record: " . $conn->error;
+            }
         } else {
-            echo "Please select an agent";
+            echo "Please select an agent or delete.";
         }
-
-        $conn->close();
     }
+        
+
+     $conn->close();
     
 
     
