@@ -1,4 +1,11 @@
 <?php
+
+    // Check if the session variable from sent.php is set
+    /*if (!isset($_SESSION['sent_page_visited'])) {
+        header("location: sent.php");
+        exit();
+    }*/
+
     include 'db_connection.php';
 
     session_start();

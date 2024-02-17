@@ -14,6 +14,9 @@
 
     $userEmail = $_SESSION["email"];
 
+    // Set a session variable to indicate that the user has visited sent.php
+    //$_SESSION['sent_page_visited'] = true;
+
     $sql = "SELECT * FROM agents WHERE email='$userEmail'";
     $results = $conn->query($sql);
 
