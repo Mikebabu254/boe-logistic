@@ -55,11 +55,7 @@
     $sqlProgram = "SELECT * FROM goods WHERE receiver = '$firstName' ORDER BY item_id DESC";
     $resultShow = $conn->query($sqlProgram);
     
-    if($resultShow->num_rows>0){
-            
-    }else{
-        echo "no data found";
-    }
+    
     
     
     // Close the database connection
