@@ -58,7 +58,7 @@
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        if (isset($_POST['agent'])) {
+        if (isset($_POST['agentBtn'])) {
             $agentName = $_POST['agent'];
     
             // Update the goods table with the selected agent

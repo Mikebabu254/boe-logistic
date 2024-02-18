@@ -41,7 +41,7 @@
         ?>
     </table>
 
-    <h2>select agent to recieve the packag: <?php echo $receiverSubcounty; ?></h2>
+    <h2>select agent to recieve the package: <?php echo $receiverSubcounty; ?></h2>
         
     <form method="post" action="selectAgent.php">
         <?php
@@ -50,7 +50,7 @@
             }
         ?>
 
-        <input type="submit" name="agent" value="Assign Agent">
+        <input type="submit" name="agentBtn" >
 
     
     </form>
