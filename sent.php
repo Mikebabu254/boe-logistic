@@ -47,6 +47,72 @@
             <input type="radio" name="county" value="NAIROBI">Nairobi
             <input type="radio" name="county" value="KIAMBU">Kiambu
         </div>
+        <select id="agentsSelect">
+            <?php
+                $categories = mysqli_query($conn, "SELECT * FROM agents WHERE sub_county = '$county_receiving'");
+                while($c = mysqli_fetch_array($categories)){
+                    ?>
+                <option value="<?php echo $c['id'] ?>"><?php echo $c['first_name'] ?> <?php echo $c['sub_county'] ?></option>
+                <?php } $conn->close(); ?>
+        </select>
+
+        <button id="refreshButton">Refresh Select</button>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const countyRadio = document.getElementsByName("county");
+                const constituencyDiv = document.querySelector(".constituency");
+                const submitButton = document.querySelector(".butn");
+                const refreshButton = document.getElementById("refreshButton");
+                const selectElement = document.getElementById("agentsSelect");
+
+                submitButton.style.transition = "all 200s ease";
+
+                for (let i = 0; i < countyRadio.length; i++) {
+                    countyRadio[i].addEventListener("change", function() {
+                        const selectedCounty = this.value;
+
+                        if (selectedCounty === "NAIROBI") {
+                            updateConstituency(["RUARAKA", "ROYSAMBU", "KASARANI", "EMBAKASI CENTRAL", "DAGORETTI SOUTH", "DAGORETTI NORTH", "WESTLANDS"]);
+                        } else if (selectedCounty === "KIAMBU") {
+                            updateConstituency(["RUIRU", "JUJA", "GITHUNGURI", "KIAMBAA", "LIMURU", "KABETE", "THIKA TOWN", "KIAMBU TOWN"]);
+                        } else {
+                            updateConstituency([]);
+                        }
+                    });
+                }
+
+                refreshButton.addEventListener("click", function() {
+                    const selectedCounty = document.querySelector('input[name="county"]:checked').value;
+
+                    // Use AJAX to fetch and update the options in the select element
+                    const xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            const newOptions = JSON.parse(xhr.responseText);
+                            updateSelectOptions(newOptions);
+                        }
+                    };
+
+                    // Modify the URL according to your server-side script that fetches the data
+                    xhr.open("GET", "get_agents.php?county=" + encodeURIComponent(selectedCounty), true);
+                    xhr.send();
+                });
+
+                function updateSelectOptions(options) {
+                    // Clear existing options
+                    selectElement.innerHTML = "";
+
+                    // Add new options
+                    for (let i = 0; i < options.length; i++) {
+                        const option = document.createElement("option");
+                        option.value = options[i].id;
+                        option.text = options[i].first_name + " " + options[i].sub_county;
+                        selectElement.appendChild(option);
+                    }
+                }
+            });
+        </script>
 
         
 
@@ -78,50 +144,10 @@
     </form>
 
     
+
     
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const countyRadio = document.getElementsByName("county");
-            const constituencyDiv = document.querySelector(".constituency");
-            const submitButton = document.querySelector(".butn");
-
-            submitButton.style.transition = "all 200s ease"; 
-
-            for (let i = 0; i < countyRadio.length; i++) {
-                countyRadio[i].addEventListener("change", function() {
-                    const selectedCounty = this.value;
-
-                    if (selectedCounty === "NAIROBI") {
-                        updateConstituency(["RUARAKA","ROYSAMBU","KASARANI", "EMBAKASI CENTRAL","DAGORETTI SOUTH","DAGORETTI NORTH","WESTLANDS"]);
-                    } else if (selectedCounty === "KIAMBU") {
-                        updateConstituency(["RUIRU","JUJA","GITHUNGURI","KIAMBAA","LIMURU","KABETE","THIKA TOWN","KIAMBU TOWN"]);
-                    } else {
-                        updateConstituency([]);
-                    }
-                });
-            }
-
-            function updateConstituency(options) {
-                constituencyDiv.innerHTML = "";
-
-                for (let i = 0; i < options.length; i++) {
-                    const input = document.createElement("input");
-                    input.type = "radio";
-                    input.name = "constituency";
-                    input.value = options[i];
-                    input.id = options[i];
-
-                    const label = document.createElement("label");
-                    label.htmlFor = options[i];
-                    label.innerText = options[i];
-
-                    constituencyDiv.appendChild(input);
-                    constituencyDiv.appendChild(label);
-                }
-              
-            }
-        });
-    </script>
+    
+    
     
 </body>
 </html>
