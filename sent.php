@@ -73,6 +73,8 @@
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>-->
 
+        <input type="password" placeholder="key" name="passkey">
+
         <input type="submit" value="submit" class="butn">
 
     </form>

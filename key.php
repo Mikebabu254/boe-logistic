@@ -1,3 +1,5 @@
+
+
 <?php
 
     session_start();
@@ -26,9 +28,16 @@
         //collection of user input
         $passKey = $_POST['passKey'];
         echo $passKey;
-        $sql = "INSERT INTO key (userID,email,key_value) VALUES ('$concat','$userEmail','$passKey')";
-        $result = $res
+        $sql_query = mysqli_query($conn, "INSERT INTO entry_key (userID,email,key_value) VALUES ('$concat','$userEmail','$passKey')");
         
+        
+        
+        if($sql_query){
+            echo "<script>alert('inserted successful')</script>";
+
+        }else{
+            echo "<script>alert(' not inserted successful')</script>";    
+        }
     }
 ?>
 
@@ -40,8 +49,9 @@
     <title>key</title>
 </head>
 <body>
-    <form action="key.php" method="post">
-        <input type="password" placeholder="key" name="passKey">
+    
+    <form action="key.php" method="post" class="">
+        <input type="password" placeholder="key" name="passKey" id="pass">
         <input type="submit" value="submit">
     </form>
 </body>

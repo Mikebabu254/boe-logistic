@@ -29,12 +29,12 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] == "admin@mail.com")) {
       </ul>
   </nav>
 
-    <div class="frm">
+    <!--<div class="frm">
         <iframe src="dashboard.php" id="dashFrame" class="dashFrame"></iframe>
         <iframe src="account.php" id="accountFrame" class="accountFrame"></iframe>
         <iframe src="sent.php" id="sentFrame" class="sentFrame"></iframe>
         <iframe src="inventory.php" id="inventoryFrame" class="inventoryFrame"></iframe>
-    </div>
+    </div>-->
 
   <script src="js file/scipt.js"></script>
 </body>

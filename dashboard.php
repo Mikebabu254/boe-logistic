@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="styles/dashboard.css">
 </head>
 <body>
+    
     <div class="back">
         <div class="txt">Welcome, <?php echo $firstName; ?></div>
 
