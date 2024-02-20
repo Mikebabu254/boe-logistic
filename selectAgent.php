@@ -51,7 +51,7 @@
         ?>
 
         <input type="submit" name="agentBtn" >
-        <a href="database/db_exit.php"><input type="submit" name="agentBtn" ></a>
+        <!--<a href="database/db_exit.php"><input type="submit" name="agentBtn" ></a>-->
 
     
     </form>

@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $passKey = $_POST['passkey'];
 
     // Validate passKey
-    $passKeyCheckQuery = "SELECT * FROM entry_key WHERE email = '$userEmail' AND passkey = '$passKey'";
+    $passKeyCheckQuery = "SELECT * FROM entry_key WHERE email = '$userEmail' AND key_value = '$passKey'";
     $passKeyCheckResult = $conn->query($passKeyCheckQuery);
 
     if ($passKeyCheckResult->num_rows == 0) {

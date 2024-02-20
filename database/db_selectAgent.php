@@ -66,7 +66,7 @@
     
             if ($conn->query($updateSql) === TRUE) {
                 echo "Agent assigned successfully";
-                header("location: account.php");
+                header("location: sent.php");
                 exit();
             } else {
                 echo "Error updating goods table: " . $conn->error;
@@ -77,7 +77,7 @@
     
             if ($conn->query($deleteSql) === TRUE) {
                 echo "Record deleted successfully";
-                header("location: account.php");
+                header("location: sent.php");
                 exit();
             } else {
                 echo "Error deleting record: " . $conn->error;
