@@ -26,6 +26,7 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] == "admin@mail.com")) {
           <li><a href="#" id="sent">Send</a></li>
           <li><a href="#" id="inventory">Inventory</a></li>
           <li><a href="logout.php">Logout</a></li>
+          <li><a href="#">details</a></li>
       </ul>
   </nav>
 
@@ -34,6 +35,7 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] == "admin@mail.com")) {
         <iframe src="account.php" id="accountFrame" class="accountFrame"></iframe>
         <iframe src="sent.php" id="sentFrame" class="sentFrame"></iframe>
         <iframe src="inventory.php" id="inventoryFrame" class="inventoryFrame"></iframe>
+        <iframe src="key.php" id="key_frame" class="keyFrame"></iframe>
     </div>
 
   <script src="js file/scipt.js"></script>

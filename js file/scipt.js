@@ -81,6 +81,9 @@ var sentFrame = document.getElementById("sentFrame");
 var inventory = document.getElementById("inventory");
 var inventoryFrame = document.getElementById("inventoryFrame");
 
+var key = document.getElementById("key");
+var keyFrame = document.getElementById("key_frame");
+
 dashboard.onclick = function(){
   dashFrame.style.visibility="visible";
   accountFrame.style.visibility="hidden";
