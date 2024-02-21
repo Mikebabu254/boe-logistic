@@ -24,6 +24,8 @@
         // You can handle the error or redirect the user to an error page
         exit();
     }
+
+    $sqlTable = $conn->query("SELECT * FROM goods WHERE receiver ='$firstName'");
 ?>
 
 
@@ -51,9 +53,7 @@
                         <th>Received</th>
                         <th>Total</th>
                     </tr>
-                    <tr>
-                        <td></td>
-                    </tr>
+                    
                     
                 </table>
             </div>
@@ -84,9 +84,16 @@
                         <th>Item No</th>
                         <th>Received</th>
                     </tr>
-                    <tr>
-                        <td></td>
-                    </tr>
+                    <?php
+                        while($rw = mysqli_fetch_assoc($sqlTable)){
+                            echo "<tr>";
+                                echo "<td>{$rw['date_send']}</td>";
+                                echo "<td>{$rw['sender_name']}</td>";
+                                echo "<td>{$rw['item_id']}</td>";
+                                echo "<form method ='post'><td><button>arrived</button></td></form>";
+                    
+                        }
+                    ?>
                     
                 </table>
             </div>
