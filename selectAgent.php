@@ -1,13 +1,5 @@
 <?php
-
-    include 'database/db_connection.php';
-
-    session_start();
-    if(!isset($_SESSION["userID"])){
-        header("location: sent.php");
-    }
-
-    $userID = $_SESSION["userID"];
+    include 'db_connection.php';
 
     if($conn->connect_error){
         die("connection failed:" .$conn-> connect_error);
@@ -43,8 +35,6 @@
     } else {
         echo "No goods data found";
     }
-
-
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_POST['agentBtn'])) {
@@ -136,7 +126,6 @@
     </script>
 </body>
 </html>
-
 
 <?php
     // Close the database connection

@@ -57,10 +57,6 @@
             echo '<script>alert("An error occurred while inserting the data. Check for data duplication (e.g., phone number, id number, or email address). Try again by inserting correct data.");</script>';
         }
     }
-
-    // Close the connection
-    mysqli_close($conn);
-
 ?>
 
 <!DOCTYPE html>

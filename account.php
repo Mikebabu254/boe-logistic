@@ -6,7 +6,7 @@
         exit();
     }
 
-    include 'database/db_connection.php';
+    include 'db_connection.php';
 
     if($conn->connect_error){
         die("connection failed:" .$conn-> connect_error);
