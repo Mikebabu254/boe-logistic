@@ -14,6 +14,7 @@
     $userDetail = $results->fetch_assoc();
     $name = $userDetail['first_name'];
     $id = $userDetail['id'];
+    $hashedID = password_hash($id, PASSWORD_DEFAULT);
 
     $concat = $name.$id;
 
@@ -23,7 +24,7 @@
         //collection of user input
         $passKey = $_POST['passKey'];
         echo $passKey;
-        $sql_query = mysqli_query($conn, "INSERT INTO entry_key (userID,email,key_value) VALUES ('$concat','$userEmail','$passKey')");
+        $sql_query = mysqli_query($conn, "INSERT INTO entry_key (userID,email,key_value) VALUES ('$concat','$userEmail','$hashedID ')");
         
         if($sql_query){
             echo "<script>alert('inserted successful')</script>";
@@ -42,8 +43,7 @@
     <title>key</title>
 </head>
 <body>
-    
-    <form action="key.php" method="post" class="">
+    <form action="key.php" method="post" id="key">
         <input type="password" placeholder="key" name="passKey" id="pass">
         <input type="submit" value="submit">
     </form>

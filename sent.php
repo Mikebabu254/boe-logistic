@@ -36,13 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $passKey = $_POST['passkey'];
 
     // Validate passKey
-    $passKeyCheckQuery = "SELECT * FROM entry_key WHERE email = '$userEmail' AND key_value = '$passKey'";
-    $passKeyCheckResult = $conn->query($passKeyCheckQuery);
-
-    if ($passKeyCheckResult->num_rows == 0) {
-        echo '<script>alert("Incorrect passKey!");</script>';
-        exit();
-    }
+    
 
     // Sanitize input values
     $item_name_value = htmlspecialchars($item_name);
@@ -130,8 +124,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="hidden" name="county_receiving" id="countyReceiving">
         <input type="hidden" name="subcounty_receiving" id="subcountyReceiving">
         <input type="hidden" name="agent_receiving" id="receivingAgent">
-        
-        <input type="password" placeholder="key" name="passkey" required>
         <a href="database/db_logout.php"><input type="submit" value="submit" class="butn"></a>
     </form>
 
