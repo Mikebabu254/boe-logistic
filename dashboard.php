@@ -25,7 +25,7 @@
         exit();
     }
 
-    $sqlTable = $conn->query("SELECT * FROM goods WHERE receiver ='$firstName'");
+    $sqlTable = $conn->query("SELECT * FROM goods WHERE receiver ='$firstName' AND arrival_date = '0000-00-00'");
 ?>
 
 
@@ -77,25 +77,37 @@
 
         <div class="contain">
             <div class="pending">
-            <table >
+            <?php
+            echo
+                "<table >
                     <tr>
                         <th>Date</th>
                         <th>Sender</th>
                         <th>Item No</th>
                         <th>Received</th>
-                    </tr>
-                    <?php
-                        while($rw = mysqli_fetch_assoc($sqlTable)){
+                    </tr>";
+                        while ($rw = mysqli_fetch_assoc($sqlTable)) {
                             echo "<tr>";
-                                echo "<td>{$rw['date_send']}</td>";
-                                echo "<td>{$rw['sender_name']}</td>";
-                                echo "<td>{$rw['item_id']}</td>";
-                                echo "<form method ='post'><td><button>arrived</button></td></form>";
+                            echo "<td>{$rw['date_send']}</td>";
+                            echo "<td>{$rw['sender_name']}</td>";
+                            echo "<td>{$rw['item_id']}</td>";
+                            echo "<form method='post' action='dashboard.php'>";
+                            echo "<input type='hidden' name='item_id' value='{$rw['item_id']}'>";
+                            echo "<td><button type='submit' name='arrived'>Arrived</button></td>";
+                            echo "</form>";
+
+                            if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['arrived'])) {
+                                $item_id = $_POST['item_id'];
+                                $updateTime = "UPDATE goods SET arrival_date = NOW() WHERE item_id = '$item_id'";
+                                mysqli_query($conn, $updateTime);
+                                // You may want to add a check for successful update or handle errors
+                            }
+                                echo "</tr>";
+                            }
+                        
                     
-                        }
-                    ?>
-                    
-                </table>
+                echo "</table>";
+                ?>
             </div>
         </div>
         
