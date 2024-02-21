@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $county_receiving = $_POST["county"];
     $subcounty_receiving = $_POST["constituency"];
     $passKey = $_POST['passkey'];
+    $_SESSION['userID'] = $userDetails['userID'];
 
     // Validate passKey
     $passKeyCheckQuery = "SELECT * FROM entry_key WHERE email = '$userEmail' AND key_value = '$passKey'";

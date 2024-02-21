@@ -1,6 +1,5 @@
 <?php
     include 'database/db-user.php';
-    //include 'database/db_delete.php';
 ?>
 
 <!DOCTYPE html>

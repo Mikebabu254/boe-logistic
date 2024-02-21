@@ -2,7 +2,7 @@
 session_start();
 
 // Check if the logout button is clicked
-if (isset($_POST["logout_submit"])) {
+if (isset($_POST["submit"])) {
     // Unset all session variables
     $_SESSION = array();
 
