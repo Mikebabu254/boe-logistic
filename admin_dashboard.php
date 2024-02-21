@@ -6,8 +6,6 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] != "admin@mail.com")) {
     header("Location: agent_dashboard.php");
     exit();
 }
-
-// Your admin dashboard content goes here
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +17,6 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] != "admin@mail.com")) {
     <link rel="stylesheet" href="styles/admin.css">
 </head>
 <body>
-   
     <nav>
       <img src="images/icons.jpg">
       <ul>
@@ -29,22 +26,21 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] != "admin@mail.com")) {
           <li><a href="#" id="inventory">Inventory</a></li>
           <li><a href="logout.php">Logout</a></li>
       </ul>
-  </nav>
-
+    </nav>
     <div class="frm">
         <iframe src="user.php" id="dashFrame" class="dashboard"></iframe>
         <iframe src="account.php" id="accountFrame" class="account"></iframe>
         <iframe src="registration.php" id="sentFrame" class="sent"></iframe>
         <iframe src="inventory.php" id="inventoryFrame" class="inventory"></iframe>
     </div>
-
     <div class="details">
         
     </div>
-    
-
-
     <script src="js file/scipt.js"></script>
 </body>
 </html>
 
+<?php
+    // Close the database connection
+    mysqli_close($conn);
+?>

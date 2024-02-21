@@ -9,9 +9,6 @@
 
     $userID = $_SESSION["userID"];
 
-    echo $_SESSION['userID'].'<br>';
-    echo $_SESSION['email'].'<br>';
-
     if($conn->connect_error){
         die("connection failed:" .$conn-> connect_error);
     }
@@ -35,19 +32,14 @@
     $sqlGoods = "SELECT * FROM goods WHERE sender_name='$firstName' ORDER BY item_id DESC LIMIT 1";
     $resultsGoods = $conn->query($sqlGoods);
 
-
-    
     if ($resultsGoods->num_rows > 0) {
         $rowOne = mysqli_fetch_assoc($resultsGoods);
         $receiverSubcounty = $rowOne['receiver_subcounty'];
-
-        //echo $receiverSubcounty;
     
         // Fetch agents in the specified receiver subcounty
         $sqlAgents = "SELECT * FROM agents WHERE sub_county='$receiverSubcounty'";
         $resultsAgents = $conn->query($sqlAgents);
     
-
     } else {
         echo "No goods data found";
     }
@@ -84,11 +76,6 @@
         }
     }
         
-
-     $conn->close();
-    
-
-    
 ?>
 
 <!DOCTYPE html>
@@ -147,9 +134,11 @@
             return confirm("Are you sure you want to delete?");
         }
     </script>
-
-    
-        
-
 </body>
 </html>
+
+
+<?php
+    // Close the database connection
+    mysqli_close($conn);
+?>

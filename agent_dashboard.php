@@ -41,3 +41,8 @@ if (!isset($_SESSION["email"]) || ($_SESSION["email"] == "admin@mail.com")) {
   <script src="js file/scipt.js"></script>
 </body>
 </html>
+
+<?php
+    // Close the database connection
+    mysqli_close($conn);
+?>
