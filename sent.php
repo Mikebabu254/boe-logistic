@@ -85,27 +85,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="constituency">
         <!-- Constituency options will be added dynamically here -->
         </div>
-        <?php
-            $sql = "SELECT * FROM entry_key WHERE email = '$userEmail'";
-            $rslt = $conn->query($sql);
-            // Check if the query was successful
-            if ($rslt) {
-                // Check if there are any rows returned
-                if ($rslt->num_rows > 0) {
-                    // Fetch the associative array representation of the result set
-                    $row = $rslt->fetch_assoc();
-                    // Access the 'userID' column from the result
-                    $userid = $row['userID'];
-                    $_SESSION['userID'] = $userid;
-                    echo $userid;
-                } else {
-                    echo "No rows found";
-                }
-            } else {
-                // Handle query error
-                echo "Error executing the query: " . $conn->error;
-            }
-        ?>
         <select name="countySelect" id="countySelect">
             <!-- Add an id attribute for easier JavaScript manipulation -->
             <?php
