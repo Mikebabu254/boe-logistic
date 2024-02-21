@@ -5,6 +5,10 @@
         die("connection failed:" .$conn-> connect_error);
     }
 
+    if(!$_SESSION){
+        header("location: index.php");
+    }
+
     $userEmail = $_SESSION["email"];
 
     $sql = "SELECT * FROM agents WHERE email='$userEmail'";
