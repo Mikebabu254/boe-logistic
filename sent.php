@@ -72,6 +72,30 @@
             <input type="text" placeholder="County" name="county" class="input" required>
             <input type="text" placeholder="Sub-county" name="subcounty" class="input" required>
         </div>-->
+        <?php
+            $sql = "SELECT * FROM entry_key WHERE email = '$userEmail'";
+            $rslt = $conn->query($sql);
+
+            // Check if the query was successful
+            if ($rslt) {
+                // Check if there are any rows returned
+                if ($rslt->num_rows > 0) {
+                    // Fetch the associative array representation of the result set
+                    $row = $rslt->fetch_assoc();
+
+                    // Access the 'userID' column from the result
+                    $userid = $row['userID'];
+                    $_SESSION['userID'] = $userid;
+
+                    echo $userid;
+                } else {
+                    echo "No rows found";
+                }
+            } else {
+                // Handle query error
+                echo "Error executing the query: " . $conn->error;
+            }
+?>
 
         <input type="password" placeholder="key" name="passkey">
 

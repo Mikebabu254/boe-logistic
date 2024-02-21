@@ -9,9 +9,11 @@
     include 'db_connection.php';
 
     session_start();
-    if(!isset($_SESSION["email"]) || ($_SESSION["email"]== "admin@mail.com")){
-        header("location: index.php");
+    if(!isset($_SESSION["userID"])){
+        header("location: sent.php");
     }
+
+    echo $_SESSION['userID'];
 
     if($conn->connect_error){
         die("connection failed:" .$conn-> connect_error);
@@ -77,7 +79,7 @@
     
             if ($conn->query($deleteSql) === TRUE) {
                 echo "Record deleted successfully";
-                header("location: sent.php");
+                header("location: db_exit.php");
                 exit();
             } else {
                 echo "Error deleting record: " . $conn->error;
