@@ -2,7 +2,7 @@
     $db_server = "localhost";
     $db_user = "root";
     $db_password = "";
-    $db_name = "boe-logistics";
+    $db_name = "boe_logistics";
 
     $conn = mysqli_connect($db_server, $db_user, $db_password, $db_name);
 ?>
