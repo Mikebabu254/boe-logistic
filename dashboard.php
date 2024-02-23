@@ -26,6 +26,11 @@
     }
 
     $sqlTable = $conn->query("SELECT * FROM goods WHERE receiver ='$firstName' AND arrival_date = '0000-00-00'");
+    $rowCount = $sqlTable->num_rows;
+    $sqlTableTwo = $conn->query("SELECT * FROM goods WHERE receiver = '$firstName'");
+    $rowCountTwo = $sqlTableTwo->num_rows;
+
+    $receive = $rowCount + $rowCountTwo;
 ?>
 
 
@@ -53,6 +58,23 @@
                         <th>Received</th>
                         <th>Total</th>
                     </tr>
+                    <tr>
+                        <th>
+                            <?php
+                                echo "$rowCount";
+                            ?>
+                        </th>
+                        <th>
+                            <?php
+                                echo "$rowCountTwo";
+                            ?>
+                        </th>
+                        <th>
+                            <?php
+                                echo "$receive";
+                            ?>
+                        </th>
+                    </tr>
                     
                     
                 </table>
@@ -78,6 +100,7 @@
         <div class="contain">
             <div class="pending">
             <?php
+            $rowCount = 0;
             echo
                 "<table >
                     <tr>
