@@ -85,20 +85,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="constituency">
         <!-- Constituency options will be added dynamically here -->
         </div>
-        <select name="countySelect" id="countySelect">
+        
             <!-- Add an id attribute for easier JavaScript manipulation -->
             <?php
-                $mySql = $conn->query("SELECT * FROM agents");
-                // Check if there are rows in the result set
-                if ($mySql->num_rows > 0) {
-                    while ($agentRow = mysqli_fetch_assoc($mySql)) {
-                        echo "<option value='{$agentRow['county']}|{$agentRow['sub_county']}|{$agentRow['first_name']}'>{$agentRow['county']} {$agentRow['sub_county']} {$agentRow['first_name']}</option>";
-                    }
-                } else {
-                    echo "<option value=''>No counties found</option>";
+        // Check if the user is not an admin before displaying the dropdown
+        if ($userEmail !== "admin@mail.com") {
+            echo '<select name="countySelect" id="countySelect">';
+            // Add an id attribute for easier JavaScript manipulation
+            $mySql = $conn->query("SELECT * FROM agents");
+            // Check if there are rows in the result set
+            if ($mySql->num_rows > 0) {
+                while ($agentRow = mysqli_fetch_assoc($mySql)) {
+                    echo "<option value='{$agentRow['county']}|{$agentRow['sub_county']}|{$agentRow['first_name']}'>{$agentRow['county']} {$agentRow['sub_county']} {$agentRow['first_name']}</option>";
                 }
-            ?>
-        </select>
+            } else {
+                echo "<option value=''>No counties found</option>";
+            }
+            echo '</select>';
+        }
+        ?>
+        
         <!-- Add hidden input fields to store the selected values -->
         <input type="hidden" name="county_receiving" id="countyReceiving">
         <input type="hidden" name="subcounty_receiving" id="subcountyReceiving">

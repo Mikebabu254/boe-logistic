@@ -22,8 +22,16 @@
         $email = sanitize_input($_POST["email"]);
         $password = sanitize_input($_POST["password"]);
 
+        if ($email === 'admin@boe.com') {
+            // If the email is admin, query the admin table
+            $query = "SELECT * FROM admin WHERE email = ?";
+        } else {
+            // If not admin, query the agent table
+            $query = "SELECT * FROM agents WHERE email = ?";
+        }
+
         // Use prepared statement to avoid SQL injection
-        $query = "SELECT * FROM agents WHERE email = ?";
+        //$query = "SELECT * FROM agents WHERE email = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("s", $email);
         $stmt->execute();
@@ -37,8 +45,8 @@
             if (password_verify($password, $hashed_password)) {
                 // Password is correct, log in the user
                 $_SESSION["email"] = $email; // Store email in session
-                if($email == 'admin@mail.com'){
-                    header("Location: admin_dashboard.php");
+                if($email == 'admin@boe.com'){
+                    header("Location: agent_dashboard.php");
                     exit();
                 }else{
                     header("Location: agent_dashboard.php");
