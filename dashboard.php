@@ -29,14 +29,14 @@
     $rowCount = $sqlTable->num_rows;
     $sqlTableTwo = $conn->query("SELECT * FROM goods WHERE receiver = '$firstName'");
     $rowCountTwo = $sqlTableTwo->num_rows;
-    $receive = $rowCount + $rowCountTwo;
+    $receive = $rowCountTwo - $rowCount;
 
 
     $senderTable = $conn->query("SELECT * FROM goods WHERE sender_name = '$firstName' AND arrival_date = '0000-00-00'");
     $rowPendCount = $senderTable->num_rows;
     $senderTableTwo = $conn->query("SELECT * FROM goods WHERE sender_name = '$firstName'");
     $rowSendCount = $senderTableTwo->num_rows;
-    $sent=$rowPendCount+$rowSendCount;
+    $sent= $rowSendCount - $rowPendCount;
     
 ?>
 
@@ -73,12 +73,12 @@
                         </th>
                         <th>
                             <?php
-                                echo "$rowCountTwo";
+                                echo "$receive";
                             ?>
                         </th>
                         <th>
                             <?php
-                                echo "$receive";
+                                echo "$rowCountTwo";
                             ?>
                         </th>
                     </tr>
@@ -104,12 +104,12 @@
                         </th>
                         <th>
                             <?php
-                                echo "$rowSendCount";
+                                echo "$sent";
                             ?>
                         </th>
                         <th>
                             <?php
-                                echo "$sent";
+                                echo " $rowSendCount";
                             ?>
                         </th>
                     </tr>
@@ -132,12 +132,12 @@
                     </tr>";
                         while ($rw = mysqli_fetch_assoc($sqlTable)) {
                             echo "<tr>";
-                            echo "<td>{$rw['date_send']}</td>";
-                            echo "<td>{$rw['sender_name']}</td>";
-                            echo "<td>{$rw['item_id']}</td>";
+                            echo "<th>{$rw['date_send']}</th>";
+                            echo "<th>{$rw['sender_name']}</th>";
+                            echo "<th>{$rw['item_id']}</th>";
                             echo "<form method='post' action='dashboard.php'>";
                             echo "<input type='hidden' name='item_id' value='{$rw['item_id']}'>";
-                            echo "<td><button type='submit' name='arrived'>Arrived</button></td>";
+                            echo "<th><button type='submit' name='arrived'>Arrived</button></th>";
                             echo "</form>";
 
                             if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['arrived'])) {
