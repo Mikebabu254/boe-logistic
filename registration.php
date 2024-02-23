@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if (!isset($_SESSION["email"]) || ($_SESSION["email"] != "admin@mail.com")) {
+    if (!isset($_SESSION["email"]) || ($_SESSION["email"] != "admin@boe.com")) {
         header("Location: index.php");
         exit();
     }

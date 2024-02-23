@@ -1,7 +1,7 @@
 <?php 
     session_start();
     // Check if the user is not logged in, redirect to login page
-    if (!isset($_SESSION["email"]) || ($_SESSION["email"] != "admin@mail.com")) {
+    if (!isset($_SESSION["email"]) || ($_SESSION["email"] != "admin@boe.com")) {
         header("Location: index.php");
         exit();
     }
@@ -13,7 +13,7 @@
     }
 
     // Retrieve user information from the database
-    $sql = "SELECT * FROM agents";
+    $sql = "SELECT * FROM admin";
     $result = mysqli_query($conn, $sql);
 
     if (!$result) {

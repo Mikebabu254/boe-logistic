@@ -15,8 +15,13 @@
     // Get the logged-in user's email
     $userEmail = $_SESSION["email"];
 
-    // Query the database to get user details
-    $sql = "SELECT * FROM agents WHERE email = '$userEmail'";
+    if($userEmail === 'admin@boe.com'){
+        $sql = "SELECT * FROM admin WHERE email = '$userEmail'";
+    }else{
+        // Query the database to get user details
+        $sql = "SELECT * FROM agents WHERE email = '$userEmail'";
+    }
+    
     $result = $conn->query($sql);
    
     if ($result->num_rows > 0) {
@@ -29,7 +34,7 @@
         exit();
     }
 
-    if($userEmail == "admin@mail.com"){
+    if($userEmail == "admin@boe.com"){
         $sqlCode = "SELECT * FROM goods"; /*WHERE sender_name = '$firstName'";*/
         $results = $conn->query($sqlCode);
     

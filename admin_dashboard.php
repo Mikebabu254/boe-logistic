@@ -2,7 +2,7 @@
 session_start();
 
 // Check if the user is not logged in, redirect to login page
-if (!isset($_SESSION["email"]) || ($_SESSION["email"] != "admin@mail.com")) {
+if (empty($_SESSION["email"]) || ($_SESSION["email"] != "admin@boe.com")) {
     header("Location: index.php");
     exit();
 }

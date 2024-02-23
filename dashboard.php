@@ -13,7 +13,12 @@
 
     $userEmail = $_SESSION["email"];
 
-    $sql = "SELECT first_name FROM agents WHERE email = '$userEmail'";
+    if($userEmail === 'admin@boe.com'){
+        $sql = "SELECT first_name FROM admin WHERE email = '$userEmail'";
+    }else{
+        $sql = "SELECT first_name FROM agents WHERE email = '$userEmail'";
+    }
+    
     $results = $conn->query($sql);
 
     if ($results->num_rows > 0) {
