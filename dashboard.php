@@ -29,8 +29,15 @@
     $rowCount = $sqlTable->num_rows;
     $sqlTableTwo = $conn->query("SELECT * FROM goods WHERE receiver = '$firstName'");
     $rowCountTwo = $sqlTableTwo->num_rows;
-
     $receive = $rowCount + $rowCountTwo;
+
+
+    $senderTable = $conn->query("SELECT * FROM goods WHERE sender_name = '$firstName' AND arrival_date = '0000-00-00'");
+    $rowPendCount = $senderTable->num_rows;
+    $senderTableTwo = $conn->query("SELECT * FROM goods WHERE sender_name = '$firstName'");
+    $rowSendCount = $senderTableTwo->num_rows;
+    $sent=$rowPendCount+$rowSendCount;
+    
 ?>
 
 
@@ -90,7 +97,21 @@
                         <th>Total</th>
                     </tr>
                     <tr>
-                        <td></td>
+                        <th>
+                            <?php
+                                echo "$rowPendCount";
+                            ?>
+                        </th>
+                        <th>
+                            <?php
+                                echo "$rowSendCount";
+                            ?>
+                        </th>
+                        <th>
+                            <?php
+                                echo "$sent";
+                            ?>
+                        </th>
                     </tr>
                     
                 </table>
