@@ -121,26 +121,36 @@
             ?>   
         </table>
     </div>
-    <div class="sent_transactions">
-        <table>
-            <tr>
-                <th class="text"> Date sent </th>
-                <th class="text"> Sent items</th>
-                <th class="text"> Item Number </th>
-                <th class="text"> Date Delivered </th>
-            </tr>
-            <?php
-                while($row = mysqli_fetch_assoc($results)){
-                    echo"<tr>";
-                        echo "<td>{$row['date_send']}</td>";
-                        echo "<td>{$row['item_name']}</td>";
-                        echo "<td>{$row['item_id']}</td>";
-                        echo "<td>{$row['arrival_date']}</td>";
-                    echo"</tr>";
-                }
-            ?>  
-        </table>
-    </div>
+    
+        
+        <?php
+            
+            if($userEmail === 'admin@boe.com'){
+
+            }else{
+                echo '<div class="sent_transactions">';
+                    echo "<table>";
+                        echo"<tr>";
+                            echo'<th class="text"> Date sent </th>';
+                            echo'<th class="text"> Sent items</th>';
+                            echo'<th class="text"> Item Number </th>';
+                            echo'<th class="text"> Date Delivered </th>';
+                        echo"</tr>";
+                        while($row = mysqli_fetch_assoc($results)){
+                            echo"<tr>";
+                                echo "<td>{$row['date_send']}</td>";
+                                echo "<td>{$row['item_name']}</td>";
+                                echo "<td>{$row['item_id']}</td>";
+                                echo "<td>{$row['arrival_date']}</td>";
+                            echo"</tr>";
+
+                        }
+                    echo "</table>";
+                echo '</div>';
+            }
+                
+        ?>
+    
 </body>
 </html>
 
