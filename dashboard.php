@@ -130,19 +130,19 @@
             echo
                 "<table >
                     <tr>
-                        <th>Date</th>
-                        <th>Sender</th>
-                        <th>Item No</th>
-                        <th>Received</th>
+                        <th class='hd'>Date</th>
+                        <th class='hd'>Sender</th>
+                        <th class='hd'>Item No</th>
+                        <th class='hd'>Received</th>
                     </tr>";
                         while ($rw = mysqli_fetch_assoc($sqlTable)) {
                             echo "<tr>";
-                                echo "<td>{$rw['date_send']}</td>";
+                                echo "<td >{$rw['date_send']}</td>";
                                 echo "<td>{$rw['sender_name']}</td>";
                                 echo "<td>{$rw['item_id']}</td>";
                                 echo "<form method='post' action='dashboard.php'>";
                                 echo "<input type='hidden' name='item_id' value='{$rw['item_id']}'>";
-                                echo "<th><button type='submit' name='arrived'>Arrived</button></td>";
+                                echo "<td><button type='submit' name='arrived'>Arrived</button></td>";
                                 echo "</form>";
 
                                 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['arrived'])) {

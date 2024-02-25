@@ -70,8 +70,8 @@ container{
 }
 
 table{
-    margin-left: -40px;
-    margin-top: 30px;
+    margin-left: 0px;
+    margin-top: 0px;
     width: 100%;
 }
 
@@ -87,7 +87,6 @@ table{
 
 .pending{
     height: 500px;
-    border-radius: 20px;
     width: 90%;
     background-color: var(--blue);
     overflow: hidden;
@@ -98,7 +97,7 @@ th{
     
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 100;
 }
 
 .loader {
@@ -134,10 +133,19 @@ th{
     100%{transform: rotate(.5turn)}
   }
 
+td{
+padding-left: 90px;
+}
 
-th button{
+td button{
     background-color: var(--gold);
     width: 100px;
     height: 30px;
     margin: 10px 0 0 5px;
+}
+
+.hd{
+    background-color: var(--gold);
+    font-size: 20px;
+    height: 50px;
 }
