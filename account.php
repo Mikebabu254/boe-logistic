@@ -50,7 +50,7 @@
         if($results->num_rows>0){
             
         }else{
-            echo "no data found";
+            echo "no data yet";
         }
     }
     $sqlProgram = "SELECT * FROM goods WHERE receiver = '$firstName' ORDER BY item_id DESC";
