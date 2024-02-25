@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Add an id attribute for easier JavaScript manipulation -->
             <?php
         // Check if the user is not an admin before displaying the dropdown
-        if ($userEmail !== "admin@mail.com") {
+        if ($userEmail !== "admin@boe.com") {
             echo '<select name="countySelect" id="countySelect">';
             // Add an id attribute for easier JavaScript manipulation
             $mySql = $conn->query("SELECT * FROM agents");
