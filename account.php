@@ -80,15 +80,36 @@
         </div>
     </container>
     <div class="recieved_transactions">
-        <table>
-            <tr>
-                <th class="text"> Date Dispatched</th>
-                <th class="text"> Recieved items</th>
-                <th class="text"> Item Number </th>
-                <th class="text"> Date recieved </th>   
-            </tr>
+        <?php
 
-            <?php
+            if($userEmail === 'admin@boe.com'){
+                echo '<div class="sent_transactions">';
+                        echo "<table>";
+                            echo "<tr>";
+                                echo '<th class="text"> Date sent </th>';
+                                echo '<th class="text"> Sent items</th>';
+                                echo '<th class="text"> Item Number </th>';
+                                echo '<th class="text"> Date Delivered </th>';
+                            echo "</tr>";
+                            while($row = mysqli_fetch_assoc($results)){
+                                echo"<tr>";
+                                    echo "<td>{$row['date_send']}</td>";
+                                    echo "<td>{$row['item_name']}</td>";
+                                    echo "<td>{$row['item_id']}</td>";
+                                    echo "<td>{$row['arrival_date']}</td>";
+                                echo"</tr>";
+                            } 
+            }
+            else{
+                
+                echo "<table>";
+                echo "<tr>";
+                        echo '<th class="text"> Date Dispatched</th>';
+                        echo '<th class="text"> Recieved items</th>';
+                        echo '<th class="text"> Item Number </th>';
+                        echo '<th class="text"> Date recieved </th>';   
+                        echo "</tr>";
+            }
                 while($row = mysqli_fetch_assoc($resultShow)){
                     echo"<tr>";
                         echo "<td>{$row['date_send']}</td>";
