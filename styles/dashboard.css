@@ -77,7 +77,7 @@ table{
 
 .contain{
     width: 100%;
-    height: 300px;
+    height: auto;
     margin-top: 20vh;
     position: absolute;
     top: 40%;
@@ -86,9 +86,19 @@ table{
 }
 
 .pending{
+    height: 500px;
     border-radius: 20px;
     width: 90%;
-    background-color: #0d4683;
+    background-color: var(--blue);
+    overflow: hidden;
+    overflow-y: scroll;  
+}
+
+th{
+    
+    position: sticky;
+    top: 0;
+    z-index: 2;
 }
 
 .loader {
@@ -123,3 +133,11 @@ table{
   @keyframes l12 { 
     100%{transform: rotate(.5turn)}
   }
+
+
+th button{
+    background-color: var(--gold);
+    width: 100px;
+    height: 30px;
+    margin: 10px 0 0 5px;
+}
