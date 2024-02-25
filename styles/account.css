@@ -50,7 +50,7 @@ img{
 }
 .recieved_transactions{
     background-color: #0d4683;
-    height: 250px;
+    height: 300px;
     width: 100%;
     opacity: 90%;
     overflow: hidden;
@@ -58,7 +58,7 @@ img{
 }
 .sent_transactions {
     background-color: var(--gold);
-    height: 250px; 
+    height: 300px; 
     width: 100%;
     opacity: 90%;
     margin-top: 30px;
