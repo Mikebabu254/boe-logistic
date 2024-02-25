@@ -53,15 +53,20 @@ img{
     height: 300px;
     width: 100%;
     opacity: 90%;
+    overflow: hidden;
+    overflow-y: scroll;
     
 }
-.sent_transactions{
-    background-color: var(--gold) ;
-    height: 300px;
+.sent_transactions {
+    background-color: var(--gold);
+    height: 300px; /* Set the fixed height */
     width: 100%;
     opacity: 90%;
     margin-top: 30px;
+    overflow: hidden; /* Hide the overflow */
+    overflow-y: scroll; /* Enable vertical scrollbar */
 }
+
 table{
  
     width: 100%;
