@@ -72,8 +72,13 @@ table{
    
 }
 th{
-    position: static;
+    
+    position: sticky;
+    top: 0;
+    background-color: inherit;
+    z-index: 2;
 }
+
 th, td {
     border: 1px solid black; /* Add borders to each cell */
     padding: 8px; /* Add padding for better appearance */
